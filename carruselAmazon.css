@@ -1,0 +1,154 @@
+     .swiper {
+		background:#232f3e;
+        width: 100%;
+		height:415px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+      }
+
+      .swiper-slide {
+        background-position: center;
+        background-size: cover;
+        width: 300px;
+        height: 300px;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+      }
+	  
+.prodCarAmz{
+	min-width: 25%;
+	height: 309px;
+	background: #232323;
+	margin: 0 12px 0 3px;
+	border-radius: 3px;
+	position: relative;
+	left: 0;
+	transition: 0.6s;
+	align-items: center;
+	align-content: center;
+}	
+.prodCarAmz .buttonCarrAmz .btn_amz{
+    text-decoration:none;
+	text-align:center;
+	display: inline-block;
+	transition-duration: 0.5s;
+    padding:6px;
+    font-size:12px;	
+	font-weight:200;
+	color:#fff;
+	background:#007eb9;
+	align-items:center;
+	align-content:center;
+	width:100%;
+	min-width:266px;
+	height:auto;
+	margin:auto;
+	border-radius:3px;
+	border:none;
+	cursor:pointer;
+}
+.prodCarAmz:hover .btn_amz{
+	margin:auto;
+	text-align:center;
+	padding:6px;
+	font-size:16px;
+	font-weight:300;
+	color:#fff;
+	background:#e47911;
+	box-shadow:inset 0 0 0 3px #3a7999;
+}
+.prodCarAmz .btn_amz:hover{
+	padding: 6px;
+	font-size: 19px;
+	font-weight: 300;
+	color: navy;
+	background: lightblue;
+	box-shadow: inset 0 0 0 3px #3a7999;
+}	
+.prodCarAmz:hover{
+	height: 400px;
+	background: linear-gradient(235deg,#89ff00,#010615,#00bcd4);
+}
+picture{
+	width:100%;
+	height:70%;
+	padding:9px;
+	display:flex;
+	overflow:hidden;
+	margin-bottom:9px;
+}
+picture img{
+	width:100%;
+	max-width:266px;
+	border-radius:3px;
+	opacity:0.5;
+	transition: 0.5s;
+}
+picture:hover img{
+	opacity: 1;
+}
+.picture:before{
+	content:'';
+	position: absolute;
+	top: -2px;
+	left: -2px;
+	right: -2px;
+	bottom: -2px;
+	background: #fff;
+	z-index: -1;
+}
+.picture:after{
+	content:'';
+	position: absolute;
+	top: -2px;
+	left: -2px;
+	right: -2px;
+	bottom: -2px;
+	background: #fff;
+	z-index: -2;
+	filter: blur(40px);
+} 
+.prodCarAmz:before{
+	background: linear-gradient(235deg,#89ff00,#010615,#00bcd4);
+}
+.prodCarAmz:after{
+	background: linear-gradient(235deg,#ff005e,#010615,#fbff00);
+}
+.detailsCarrAmz p{
+	text-align:center;
+	font-weight:100;
+	font-size:15px;
+	color:#fff;
+}
+.detailsCarrAmz,.buttonCarrAmz{
+	width:90%;
+	margin:0;
+	padding:3px;
+	display:flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 50px;
+	font-size: 19px;
+}
+small{
+	color: #555;		
+}
+.buttonCarrAmz a{
+	text-decoration:none;
+	padding:6px 13px;
+	font-size:1.1em;
+	margin:auto;
+	align-content:center;
+	display: inline-block;
+	background: none;/*#6773ff;*/
+	color: #fff;
+}
+p .star{
+	margin: 6px auto;
+	width: 66%;
+	font-size: 23px;
+	color: #808080;
+}

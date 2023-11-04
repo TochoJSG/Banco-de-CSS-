@@ -1,0 +1,19 @@
+.navigation{position:fixed;top:76px;right:1px;padding:6px;height:60px;width: 250px;background:#2196f3;transition:0.5s;z-index:100000;overflow-y:auto;}
+.navigation.active{height:auto;overflow:auto;}
+.navigation .toggle{position:relative;top:0;left:0;width:100%;height:auto;background:#2196f3;color:aqua;display:flex;align-items:center;justify-content:flex-end;padding:3px;font-size:19px;cursor:pointer;}
+.navigation .toggle:before{content:'Menu';margin:0px;}
+.navigation .toggle.active:before{content:'Cerrar';margin:0px;}
+.navigation .toggle span{position:relative;width:20px;height:50px;}
+.navigation .toggle span:before{content:'';position:absolute;top:20px;left:0;width:100%;height:2px;background:#fff;transition:0.5s;}
+.navigation .toggle span::after{content:'';position:absolute;bottom:20px;left:0;width:100%;height:2px;background:#fff;transition:0.5s;}
+.navigation .toggle.active span::before{transform: rotate(225deg);top:24px;}
+.navigation .toggle.active span::after{transform:rotate(135deg);bottom:24px;}
+.navigation ul{position:relative;background:#111;height:auto;width:250px;}
+.navigation ul li{list-style:none;height:auto;background:#111;width:250px;}
+.navigation ul li a{position:relative;text-decoration:none;display:block;padding:9px;background:#111;color:#fff;font-size:15px;transition:1s;font-weight:100;}
+.navigation ul li a:hover{left:0;transition:0s;background:#2196f3;width:250px;}
+/*::-webkit-scrollbar{width:9px;}
+::-webkit-scrollbar-track{background:aqua;}
+::-webkit-scrollbar-thumb{background:aqua;}
+::-webkit-scrollbar-thumb:hover{background:navy;}*/
+#cardDrop{width:250px;background:#111;}
