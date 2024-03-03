@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Contact Us ubication</title>
+	<style>
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		font-family: 'Poppins', sans-serif;
+	}
+	body{
+		background: linear-gradient(90deg,#0e3959 0%,#0e3959 30%,#03a9F5 30%,#03a9F5 100%);
+	}
+	.contactUs{
+		position: relative;
+		width: 100%;
+		padding: 40px 100px;
+	}
+	.contactUs .title{ 
+		display: flex;
+		justify-content:center;
+		align-items: center;
+		font size: 1.6em;
+	}
+	.contactUs .title h2{ 
+		color:#fff;
+		font-weight:600;
+	}
+	.contactBox{
+		position: relative;
+		display: grid;
+		grid-template-columns: 2fr 1fr;
+		grid-template-rows: 5fr 4fr;
+		grid-template-areas: "form info"
+							 "form map";
+		grid-gap: 20px;
+	}
+	.contact{
+		padding:40px;
+		background: #fff;
+		padding: 40px;
+		background: #fff;
+		box-shadow: 0 5px 35px rgba(0,0,0,0.15);
+		margin-top: 20px;
+	}
+	.form{
+		grid-area: form;
+	}
+	.info{
+		grid-area: info;
+	}
+	.map{
+		grid-area: map;
+	}
+	.contact h3{
+		color: #0e3959;
+		font-weight: 500;
+		font-size: 1.3em;
+		margin-bottom: 10px;
+	}
+	.formBox{
+		position: relative;
+		width: 100%;
+	}
+	.form .row50{
+		display: flex;
+		gap: 20px;
+	}
+	.inputBox{
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 9px;
+		width: 50%;
+	}
+	.form .row100.inputBox{
+		width:100%;
+	}
+	.inputBox span{
+		color: #18b7ff;
+		margin-top: 9px;
+		margin-bottom: 6px;
+		font-weight:600;
+	}
+	.inputBox input{
+		padding: 10px;
+		font-size: 1.1em;
+		outline: none;
+		border: 1px solid #333;
+	}
+	.inputBox textarea{
+		width:100%;
+		padding: 10px;
+		font-size: 1.1em;
+		outline: none;
+		border: 1px solid #333;
+		resize: none;
+		min-height:220px;
+		margin-bottom: 9px;
+	}
+	.inputBox input[type="submit"]{
+		background: #ff578b;
+		color: #fff;
+		border: none;
+		font-size:1.1em;
+		max-width: 120px;
+		font-weight: 500;
+		cursor: pointer;
+		padding: 14px 15px;
+	}
+	.inputBox::placeholder{
+		color: #999;
+	}
+	.info{
+		background:#0e3959;
+	}
+	.info h3{
+		color:#fff;
+		
+	}
+	.info .infoBox div{
+		display: flex;
+		align-items:center;
+		margin-bottom:9px;
+	}
+	.info .infoBox div span{
+		min-width:40px;
+		height:40px;
+		color:#fff;
+		background: 18b7ff;
+		display:flex;
+		justify-content: center;
+		align-items:center;
+		font-size:1.5em;
+		border-radius:50%;
+		margin-right:15px;	
+	}
+	.info .infoBox div p{
+		color:#fff;
+		font-size:1.1em;
+	}
+	.info .infoBox div a{
+		color:#fff;
+		text-decoration:none;
+		font-size:1.1em;
+	}
+	.socialesContact{
+		margin-top: 40px;
+		display: flex;
+	}
+	.socialesContact li{
+		list-style:none;
+		margin-right:15px;
+	}
+	.socialesContact li a{
+		color:#fff;
+		font-size:2em;
+		color:#ccc;
+	}
+	.socialesContact li a:hover{
+		color:#fff;
+		transform: translateY(-40px);
+	}
+	.map{
+		padding:0;
+	}
+	.map iframe{
+		width:100%;
+		height:100%;
+	}
+	@media(max-width:991px){
+		body{
+			background:#03a9f5;
+		}
+		.contactUs{
+			padding: 20px;
+		}
+		.contactBox{
+			grid-template-columns:1fr;
+			grid-template-rows:auto;
+			grid-template-areas:"form"
+								"info"
+								"map";
+		}
+		.map{
+			min-height:300px;
+			padding: 0;
+		}
+		.formBox .row50{
+			display: flex;
+			gap:0;
+			flex-direction:column;
+		}
+		.inputBox{
+			width:100%;
+		}
+		.contact{
+			padding:30px;
+		}
+	}
+	</style>
+</head>
+<body>
+	<div class="contactUs">
+		<div clas="title">
+			<h2>Get in Touch</h2>
+		</div>
+		<div class="contactBox">
+			<div class="contact form">
+				<h3>Send a Message</h3>
+				<form>
+					<div class="formBox">
+						<div class="row50">
+						<div class="inputBox">
+							<span>Name</span>
+							<input type="text" placeholder="Como te llamas"/>
+						</div>
+						<div class="inputBox">
+							<span>Name</span>
+							<input type="text" placeholder="Como te llamas"/>
+						</div>
+						</div>
+						
+						<div class="row50">
+						<div class="inputBox">
+							<span>Email</span>
+							<input type="email" placeholder="tuu@algo.com" required/>
+						</div>
+						<div class="inputBox">
+							<span>Tel</span>
+							<input type="number" placeholder="Numero para seguimiento" required/>
+						</div>
+						</div>
+						
+						<div class="row100">
+						<div class="inputBox">
+							<span>Message</span>
+							<textarea placeholder="Como te podemos ayudar" required></textarea>
+						</div>
+						</div>
+						
+						<div class="row100">
+						<div class="inputBox">
+							<input type="submit" value="Enviar"/>
+						</div>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="contact info">
+				<h3>Contact Info</h3>
+				<div class="infoBox">
+				<div>
+				<span><ion-icon name="location-outline"></ion-icon></span>
+				<p>Iztapalapa, col. El molino, Damiana, Huacepil<br>CDMX
+					</p>
+				</div>
+				<div>
+				<span><ion-icon name="mail-outline"></ion-icon></span>
+				<a href="mailto:matprimas.tocha.loc33@gmail.com">matprimas.tocha.loc33@gmail.com
+					</a>
+				</div>
+				<div>
+				<span><ion-icon name="call-outline"></ion-icon></span>
+				<a href="tel:+525610936170">+52 56 10 93 61 70
+					</a>
+				</div>
+				<ul class="socialesContact">
+					<li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
+					<li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+					<li><a href="#"><ion-icon name="logo-mercadolibre"></ion-icon></a></li>
+				</ul>
+				</div>
+			</div>
+			<div class="contact map"></div>
+		</div>
+	</div>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

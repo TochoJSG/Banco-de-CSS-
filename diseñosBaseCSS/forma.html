@@ -1,0 +1,57 @@
+<html>
+<head>
+<script>
+var allButtons = document.querySelectorAll(".estudiante button");
+
+allButtons.forEach(function(btn) {
+
+  btn.addEventListener('click', function(e) {
+    var selector = `.${this.name} input`;
+    var allInputs = document.querySelectorAll(selector);
+
+    allInputs.forEach(function(input) {
+      var test = `${input.name} : ${input.value}`;
+      console.log(test);
+    });
+    
+  });
+  
+});
+</script>
+</head>
+<body>
+
+<button id="btnData" data-name="Pedro" data-lastname="Pérez" data-age="24">Mostrar Datos</button>
+<div class="estudiante">
+  <div class="grupo1">
+    <input type="text" name="ibxName" placeholder="Escriba el nombre" />
+    <br />
+    <input type="text" name="ibxApellido" placeholder="Escriba el apellido" />
+    <br />
+    <input type="text" name="ibxCiudad" placeholder="Escriba la ciudad" />
+    <br />
+    <button id="boton1" name="grupo1">Acción Grupo 1</button>
+  </div>
+  <hr/>
+  <div class="grupo2">
+    <input type="text" name="ibxProfesor" placeholder="Escriba el profesor" />
+    <br />
+    <input type="text" name="ibxAsignatura" placeholder="Escriba asignatura" />
+    <br />
+    <button id="boton2" name="grupo2">Acción Grupo 2</button>
+  </div>
+</div>
+<button id="btnData" data-name="Pedro" data-lastname="Pérez" data-age="24">Mostrar Datos</button>
+<script>
+var btnData = document.getElementById('btnData');
+btnData.addEventListener('click', function(event) {
+  var dataSet = this.dataset;
+  console.log(dataSet);
+  console.log(dataSet.name);
+  console.log(dataSet.lastname);
+  console.log(dataSet.age);
+});
+</script>
+</body>
+
+</html>

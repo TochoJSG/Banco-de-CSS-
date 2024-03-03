@@ -1,0 +1,120 @@
+<html>
+<head>
+	<title>CSS Full Page Scrolling Effects</title>
+	<style>
+		*{
+		margin:0;
+		padding:0;
+		font-family:'Poppins',sans-serif;
+		}
+		.containerFS{
+		position:relative;
+		width:100vw;
+		height:100vh;
+		overflow:auto;
+		scroll-snap-type:y mandatory;
+		}
+		.containerFS .sectionFS{
+		position:relative;
+		width:100%;
+		height:100vh;
+		scroll-snap-align:start;
+		background-blend-mode:multiply;
+		}
+		.containerFS .sectionFS:nth-child(1){
+		background:#f00 url(w1.png);
+		background-size:cover;
+		background-attachment:fixed;
+		}
+		.containerFS .sectionFS:nth-child(2){
+		background:#0f0 url(w2.png);
+		background-size:cover;
+		background-attachment:fixed;
+		}
+		.containerFS .sectionFS:nth-child(3){
+		background:#ff0 url(w1.png);
+		background-size:cover;
+		background-attachment:fixed;
+		}
+		.containerFS .sectionFS:nth-child(4){
+		background:#00f url(w2.png);
+		background-size:cover;
+		background-attachment:fixed;
+		}
+		.containerFS .sectionFS:nth-child(5){
+		background:#00f url(w1.png);
+		background-size:cover;
+		background-attachment:fixed;
+		}
+		.containerFS .sectionFS .contentFS{
+		position:absolute;
+		bottom:50px;
+		left:50px;
+		max-width:700px;
+		}
+		.containerFS .sectionFS .contentFS h2{
+		background:#fff;
+		color:#111;
+		font-weight:600;
+		display:inline-block;
+		padding:10px 20px;
+		font-size:2em;
+		}
+		.containerFS .sectionFS .contentFS p{
+		background:#fff;
+		color:#111;
+		font-weight:300;
+		padding:10px;
+		font-size:1.7em;
+		}
+	</style>
+</head>
+<body>
+<div class="containerFS">
+	<div class="sectionFS">
+		<div class="contentFS">
+			<h2>Section One
+				</h2>
+			<p>Lorem Ipsum dolor sit amet, bla bla bla
+				</p>
+		</div>
+	</div>
+	
+	<div class="sectionFS">
+		<div class="contentFS">
+			<h2>Section Two
+				</h2>
+			<p>Lorem Ipsum dolor sit amet, bla bla bla
+				</p>
+		</div>
+	</div>
+	
+	<div class="sectionFS">
+		<div class="contentFS">
+			<h2>Section Three
+				</h2>
+			<p>Lorem Ipsum dolor sit amet, bla bla bla
+				</p>
+		</div>
+	</div>
+	
+	<div class="sectionFS">
+		<div class="contentFS">
+			<h2>Section Four
+				</h2>
+			<p>Lorem Ipsum dolor sit amet, bla bla bla
+				</p>
+		</div>
+	</div>
+	
+	<div class="sectionFS">
+		<div class="contentFS">
+			<h2>Section Five
+				</h2>
+			<p>Lorem Ipsum dolor sit amet, bla bla bla
+				</p>
+		</div>
+	</div>
+</div>
+</body>
+</html>

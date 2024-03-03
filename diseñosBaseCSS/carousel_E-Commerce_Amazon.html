@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Carouel Comercio</title>
+	<!--<link rel="stylesheet" type="text/css" href="estilo_car_E-Commerce.css"/>-->
+	<style>
+	@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+	*{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		font-family: 'Poppins', sans-serif;
+	}
+	.main{
+		width: 100%;
+		background:#232f3e;
+		height: auto;
+		margin: 9px auto;
+		position: relative;
+		padding: 3px 0;
+	}
+	.main .texto_car{
+		padding: 9px;
+		max-height:66px;
+	} 
+	.texto_car h1{
+		font-size:1.5em;
+		width:99%;
+		padding:8px;
+		font-weight:500;
+		letter-spacing:6px;
+		text-align:center;
+		color:#fff;
+		text-transform:uppercase;
+	}
+	.texto_car p{
+		padding:9px;
+		font-size:1.1em;
+		font-weight:300;
+		letter-spacing:3px;
+		line-height:30px;
+		margin:8px;
+		color:#232f3e;
+	}
+	.main header{
+		margin:6px;
+		align-items:center;
+		height:auto;
+		max-height:66px;
+		display: flex;
+		padding: 16px;
+		justify-content: space-between;
+		border-bottom: 3px solid #ddd;
+	}
+	.main header h1{
+		color: #e47911;
+		font-size:1.5em;
+		font-weight:500;
+		letter-spacing:8px;
+		padding:9px;
+	}
+	header p span{
+		font-size:3em;
+		margin:8px;
+		cursor:pointer;
+		color:#e47911;
+		width:33px;
+		height:33px;
+		display:inline-block;
+		line-height:19px;
+		text-align:center;
+		border-radius:3px;
+	}
+	header p span:hover{
+		background: #222;
+		color: #48a3c6;
+	}
+	section{
+		width: 99%;
+		height: 666px;
+		margin: auto;
+		display: flex;
+		align-items: center;
+		overflow-x: auto;
+	}
+	section::-webkit-scrollbar{
+		display: none;
+	}
+	section .prod_car{
+		min-width:24%;
+		height:90%;
+		background:#37475a;/*whitesmoke;*/
+		margin:0 8px 0 16px;
+		border-radius:9px;
+		position:relative;
+		left:0;
+		transition:0.6s;
+	}
+	picture{
+		width: 100%;
+		height: 70%;
+		max-height:415px;
+		padding: 1px;
+		display: flex;
+		overflow: hidden;
+		margin:1px;
+	}
+	picture .imgBx{
+		position: relative;
+		width: 100%;
+		height:415px;
+		overflow:hidden;
+	}
+	picture img{
+		position:absolute;
+		top:0;
+		left:0;
+		width:100%;
+		height:415px;
+		object-fit: cover;
+		transition: 0.6s ease-in-out;
+		transform-origin:center;
+		width:100%;
+		border-radius:9px;
+	}
+	picture:hover .imgBx img{
+		transform: scale(1.5);
+	}
+	.details_car{
+		width:98%;
+		max-width:333px;
+		margin:1%;
+		padding:6px;
+		display:block;
+		justify-content:center;/*space-between;*/
+		text-align:center;
+		align-items:center;
+		height:99px;
+		color:#fff;
+	}
+	.details_car h2{
+		text-align:center;
+		font-size:1em;
+		font-weight:600;
+		letter-spacing:2px;
+		padding:1px;
+		color:#fff;
+	}
+	.details_car p{
+		font-size:.9em;
+		font-weight:100;
+		letter-spacing:1px;
+		color:#fff;
+		padding:3px;
+		margin:0px;
+		text-align:justify;
+		margin-bottom:16px;
+	}
+	.details_car span{
+		font-size:1.2em;
+		font-weight:600;
+		letter-spacing:3px;
+		color:#daf;
+		padding:8px;
+		margin:16px;
+	}
+	.details_car a{
+		position:relative;
+		display:inline-bock;
+		padding:8px 23px;
+		background:#040105;
+		border:1px solid #daf;
+		color:#fff;
+		text-decoration:none;
+		font-size:1em;
+		letter-spacing:3px;
+		font-weight:300;
+		margin:auto;
+	}
+	.details_car a:hover{
+		background:#fff;
+		color:#daf;
+	}
+	@media (max-width: 768px){
+		.texto_car h1{
+			font-size: 35px;
+		}
+		.texto_car p{
+			width: 90%;
+			font-size: 21px;
+		}
+		header h1{
+			font-size: 21px;
+		}
+		header p span{
+			font-size: 30px;
+		}
+		section .prod_car{
+			min-width: 49%;
+			margin: 0 9px 0 0;
+		}
+		.details_car, .button_car_c{
+			font-size: 15px;
+		}
+		.button_car_c a{
+			padding: 6px 9px;
+		}
+	}
+	</style>
+</head>
+<body>
+
+	<div class="main">
+		<div class="texto_car">
+			<h1>Compra Lo mejor en Electronica y mas
+				</h1>
+			<p>Muchos productos con envio incluido en Amazon
+				</p>
+		</div>
+		<header>
+			<h1>Top hettest
+				</h1>
+			<p>
+				<span> &#139 </span>
+				<span> &#155 </span>
+				</p>
+		</header>
+		<section>
+			<div class="prod_car">
+				<picture>
+					<div class="imgBx">
+					<img src="ama1.jpg" alt="loading..."/>
+					</div>
+				</picture>
+				<div class="details_car">
+					<h2>Xiaomi Poco X3 Pro
+						</h2>
+					<p>Xiaomi Poco X3 Pro 6GB/128GB Negro (Ghost Black) Dual SIM
+						
+						</p>
+					<a target="_blank" href="https://www.amazon.com.mx/gp/product/B08YJFSHFM/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B08YJFSHFM&linkCode=as2&tag=carrusel23-20&linkId=3e8b2b1e856e23b6cadba4b90daf1701">Comprar en Amazon
+						</a>
+				</div>
+			</div>
+			
+			<div class="prod_car">
+				<picture>
+					<div class="imgBx">
+					<img src="ama2.jpg" alt="loading..."/>
+					</div>
+				</picture>
+				<div class="details_car">
+					<h2>SAMSUNG A12
+						</h2>
+					<p>SAMSUNG A12 4GB 64GB Azul Desbloqueado
+						</p>
+					<a target="_blank" href="https://www.amazon.com.mx/gp/product/B017U1ZFWY/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B017U1ZFWY&linkCode=as2&tag=carrusel23-20&linkId=7b4a7dc90fe8b765aaea32fae28f1c81">Comprar en Amazon</a>
+				</div>
+			</div>
+			
+			<div class="prod_car">
+				<picture>
+					<div class="imgBx">
+					<img src="ama8.jpg" alt="loading..."/>
+					</div>
+				</picture>
+				<div class="details_car">
+					<h2>HUAWEI Watch Fit- Reloj Inteligente
+						</h2>
+					<p>Pantalla AMOLED 1.64", 4GB, Bluetooth, Correa de Silicona Negro
+						</p>
+					<a target="_blank" href="https://www.amazon.com.mx/gp/product/B08G58CGT9/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B08G58CGT9&linkCode=as2&tag=carrusel23-20&linkId=1a6803c06430b51a80945a024dcc4ffd">Comprar en Amazon
+						</a>
+				</div>
+			</div>
+			
+			<div class="prod_car">
+				<picture>
+					<div class="imgBx">
+					<img src="ama3.jpg" alt="loading..."/>
+					</div>
+				</picture>
+				<div class="details_car">
+					<h2>Pebble M350
+						</h2>
+					<p>Pebble M350 Mouse Inalámbrico Bluetooth - Rosa
+						</p>
+					<a target="_blank" href="https://www.amazon.com.mx/gp/product/B07X5GHZYJ/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B07X5GHZYJ&linkCode=as2&tag=carrusel23-20&linkId=dba3695fa27e9dcb97e44c018b61ceb6">Comprar en Amazon
+						</a>
+				</div>
+			</div>
+			
+			<div class="prod_car">
+				<picture>
+					<div class="imgBx">
+					<img src="ama4.jpg" alt="loading..."/>
+					</div>
+				</picture>
+				<div class="details_car">
+					<h2>Kit Teclado y Mouse LOGITECH 
+						</h2>
+					<p>Kit Teclado + Mouse LOGITECH INALAMBRICO Bluetooth K380, M350
+						</p>
+					<a target="_blank" href="https://www.amazon.com.mx/gp/product/B09GBQC5KG/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B09GBQC5KG&linkCode=as2&tag=carrusel23-20&linkId=422116e4c41259e20dcec83bc818e904">Comprar en Amazon
+						</a>
+				</div>
+			</div>
+			
+			<div class="prod_car">
+				<picture>
+					<div class="imgBx">
+					<img src="ama5.jpg" alt="loading..."/>
+					</div>
+				</picture>
+				<div class="details_car">
+					<h2>Logitech Mouse Inalámbrico
+						</h2>
+					<p>Logitech M185 Mouse Inalámbrico Ambidiestro Negro
+						</p>
+					<a target="_blank" href="https://www.amazon.com.mx/gp/product/B004YAVF8I/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B004YAVF8I&linkCode=as2&tag=carrusel23-20&linkId=6f95499695c7e16933ac6d16006f484a">Comprar en Amazon
+						</a>
+				</div>
+			</div>
+			
+			<div class="prod_car">
+				<picture>
+					<div class="imgBx">
+					<img src="ama6.jpg" alt="loading..."/>
+					</div>
+				</picture>
+				<div class="details_car">
+					<h2>Apple EarPods
+						</h2>
+					<p>Apple EarPods con Conector Lightning
+						</p>
+					<a target="_blank" href="https://www.amazon.com.mx/gp/product/B01M0GB8CC/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B01M0GB8CC&linkCode=as2&tag=carrusel23-20&linkId=d397f18a41f936092783ed74aa894a2f">Comprar en Amazon
+						</a>
+				</div>
+			</div>
+			
+			<div class="prod_car">
+				<picture>
+					<div class="imgBx">
+					<img src="ama7.jpg" alt="loading..."/>
+					</div>
+				</picture>
+				<div class="details_car">
+					<h2>Apple AirPods Tercera generación
+						</h2>
+					<p>Apple Nuevos AirPods (Tercera generación)
+						</p>
+					<a target="_blank" href="https://www.amazon.com.mx/gp/product/B09JQL3NWT/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B09JQL3NWT&linkCode=as2&tag=carrusel23-20&linkId=ed42f729e6289d506d1c590266f0f834">Comprar en Amazon
+						</a>
+				</div>
+			</div>
+			
+			<div class="prod_car">
+				<picture>
+					<div class="imgBx">
+					<img src="ama9.jpg" alt="loading..."/>
+					</div>
+				</picture>
+				<div class="details_car">
+					<h2>Apple AirPods
+						</h2>
+					<p>Apple AirPods con Estuche de Carga
+						</p>
+					<a target="_blank" href="https://www.amazon.com.mx/gp/product/B07RK58K76/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B07RK58K76&linkCode=as2&tag=carrusel23-20&linkId=7d042a2edcfb995ba5038c4277979211">Comprar en Amazon
+						</a>
+				</div>
+			</div>
+			
+			<div class="prod_car">
+				<picture>
+					<div class="imgBx">
+					<img src="ama10.jpg" alt="loading..."/>
+					</div>
+				</picture>
+				<div class="details_car">
+					<h2>Bocinas Bluetooth Alexa
+						</h2>
+					<p>Bocinas Bluetooth, con 24 horas de reproducción, emparejamiento inalámbrico, asistente de voz, micrófono integrado
+						</p>
+					<a target="_blank" href="https://www.amazon.com.mx/gp/product/B07Y8H8STR/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B07Y8H8STR&linkCode=as2&tag=carrusel23-20&linkId=5738a30924f66bdc624f2baaf83826aa">Comprar en Amazon
+						</a>
+				</div>
+			</div>
+			
+			<div class="prod_car">
+				<picture>
+					<div class="imgBx">
+					<img src="ama11.jpg" alt="loading..."/>
+					</div>
+				</picture>
+				<div class="details_car">
+					<h2>Tronsmart Force Bocinas Bluetooth
+						</h2>
+					<p>Bocinas resistentes al agua sonido estéreo de 40 W, altavoz inalámbrico, 15 horas de reproducción, alcance de 30 m
+						</p>
+					<a target="_blank" href="https://www.amazon.com.mx/gp/product/B07MGSWD1F/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B07MGSWD1F&linkCode=as2&tag=carrusel23-20&linkId=3309c2d750bf1ce55bb1a0adf650cdfd">Comprar en Amazon	
+						</a>
+				</div>
+			</div>
+			
+			<div class="prod_car">
+				<picture>
+					<div class="imgBx">
+					<img src="ama12.jpg" alt="loading..."/>
+					</div>
+				</picture>
+				<div class="details_car">
+					<h2>JBL Flip 5 Bocinas
+						</h2>
+					<p>JBL Flip 5 Altavoz Bluetooth portátil Impermeable, Negro
+						</p>
+					<a target="_blank" href="https://www.amazon.com.mx/gp/product/B07QK2SPP7/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B07QK2SPP7&linkCode=as2&tag=carrusel23-20&linkId=dddc06ec803a92fc221f17e8baa2ad5a">Comprar en Amazon	
+						</a>
+				</div>
+			</div>
+			
+			<div class="prod_car">
+				<picture>
+					<div class="imgBx">
+					<img src="ama13.jpg" alt="loading..."/>
+					</div>
+				</picture>
+				<div class="details_car">
+					<h2>2021 Dell Inspiron 15.6"
+						</h2>
+					<p>FHD Touchscreen Laptop, AMD Ryzen 5-3450U, 8GB RAM Memory, 256GB PCIe SSD, AMD Radeon Vega 8 Graphics, Webcam, Bluetooth, Wi-Fi, HDMI, Windows 10 in S Mode
+						</p>
+					<a target="_blank" href="https://www.amazon.com.mx/gp/product/B094L3BYRP/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B094L3BYRP&linkCode=as2&tag=carrusel23-20&linkId=3b43f3b9a66b714abca80ad06e200924">Comprar en Amazon
+						</a>
+				</div>
+			</div>
+			
+			<div class="prod_car">
+				<picture>
+					<div class="imgBx">
+					<img src="ama14.jpg" alt="loading..."/>
+					</div>
+				</picture>
+				<div class="details_car">
+					<h2>Smartwatch Pulsera Inteligente
+						</h2>
+					<p>Relojes Deportivo Pantalla Táctil Completa de 1.4 Pulgadas,Pulsera Deportiva Bluetooth，para Android y iOS Móvil,reloj deportivo Impermeable IPX7 Pantalla completa táctil monitores de actividad con Pulsómetro y Presión Arterial,Monitor de Calorías, Sueño,Podómetro,Relojes Deportes GPS Monitor de Pasos, Reloj Deportivo Inteligente para Mujeres y Hombres (Azul verde)
+						</p>
+					<a target="_blank" href="https://www.amazon.com.mx/gp/product/B08B6CSMW4/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B08B6CSMW4&linkCode=as2&tag=carrusel23-20&linkId=df4518a72dbe7b042a5cd4a4d6874d17">Comprar en Amazon
+						</a>
+				</div>
+			</div>
+			
+			<div class="prod_car">
+				<picture>
+					<div class="imgBx">
+					<img src="ama15.jpg" alt="loading..."/>
+					</div>
+				</picture>
+				<div class="details_car">
+					<h2>Smartwatch Reloj Inteligente,Salandens 1.72"
+						</h2>
+					<p>Hombre-Mujer reloges Inteligente, Pantalla Táctil Completa Impermeable IP68, Con Pulsómetro y Presión Arterial, Monitor de Calorías,Sueño,Podómetro,Relojes Deportes GPS Monitor de Pasos,Notificaciones Inteligentes, Banda Inteligente para Hombres, Mujeres Compatible con IOS, Android. 
+						</p>
+					<a target="_blank" href="https://www.amazon.com.mx/gp/product/B09HHCC944/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B09HHCC944&linkCode=as2&tag=carrusel23-20&linkId=c78a258d5ba5b267a0575c505e39a59c">Comprar en Amazon</a>
+				</div>
+			</div>
+			
+			<div class="prod_car">
+				<picture>
+					<div class="imgBx">
+					<img src="ama16.jpg" alt="loading..."/>
+					</div>
+				</picture>
+				<div class="details_car">
+					<h2>Jecoo Audífonos Inalámbricos Bluetooth 5.0
+						</h2>
+					<p>Auriculares inalámbricos Impermerable con Micrófono de Reducción de Ruido Mini Audífonos Deportivos para iPhone Android
+						</p>
+					<a target="_blank" href="https://www.amazon.com.mx/gp/product/B096VB1LVW/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B096VB1LVW&linkCode=as2&tag=carrusel23-20&linkId=39ee055ff6a2a4875cbc456342e25126">Comprar en Amazon
+						</a>
+				</div>
+			</div>
+			
+			<div class="prod_car">
+				<picture>
+					<div class="imgBx">
+					<img src="ama17.jpg" alt="loading..."/>
+					</div>
+				</picture>
+				<div class="details_car">
+					<h2>Audífonos inalámbricos Bluetooth 5.0
+						</h2>
+					<p>Auriculares Impermeables Deportivos Sonido Estéreo HiFi Reducción de Ruido, Micrófono Incorporado con Estuche de Carga 3300mAh Control táctil, Reproducción de 6 Horas para iPhone y Android Ideal para Regalo
+						</p>
+					<a target="_blank" href="https://www.amazon.com.mx/gp/product/B08JV5412N/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B08JV5412N&linkCode=as2&tag=carrusel23-20&linkId=3f2547ab17b679d2511bc76793521feb">Comprar en Amazon
+						</a>
+				</div>
+			</div>
+			
+		</section>
+	</div>
+	<script type="text/javascript" src="car_commerce.js"></script>
+</body>
+</html>

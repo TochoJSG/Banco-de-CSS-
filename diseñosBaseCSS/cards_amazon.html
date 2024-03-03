@@ -1,0 +1,437 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>REsponsive Cards</title>
+	<!--<link rel="stylesheet" href="estilo_cards.css"/>-->
+	<style>
+	/*@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');*/
+	*{
+		overflow-x:hidden;
+		width:100%;
+		box-sizing:border-box;
+		margin:0;
+		padding:0;
+		font-family:consolas;
+	}
+	body{
+		display:flex;
+		justify-content:center;
+		align-items:center;
+		min-height:100vh;
+		background:#daf;
+	}
+	.containerCardAmz{
+		background:#232f3e;
+		position:relative;
+		width:100%;
+		display:grid;
+		align-items:center;
+		align-content:center;
+		grid-template-columns:repeat(auto-fit, minmax(333px, 1fr));
+		grid-gap:25px;
+		padding:66px;
+		margin:0;
+	}
+		.contCardAmz{
+			position:relative;
+			width:300px;
+			height:400px;
+			background:#fff;
+			transform-style:preserve-3d;
+			transform:perspective(2000px);
+			transition:1s;
+			box-shadow:inset 300px 0 50px rgba(0,0,0,0.15),
+						0 20px 20px rgba(0,0,0,0.15);
+		}
+		.contCardAmz:hover{
+			transform:perspective(2000px) /*translateX(50%);*/
+			box-shadow:inset 20px 0 50px rgba(0,0,0,0.15),
+						0 10px 10px rgba(0,0,0,0.15);
+		}
+		.contCardAmz .coverLaCard{
+			position:relative;
+			width:100%;
+			height:100%;
+			background:#cccc;
+			z-index:2;
+			display:flex;
+			justify-content:center;
+			align-items:center;
+			transform-style:preserve-3d;
+			overflow:hidden;
+			transition:1s ease-in-out;
+			transform-origin:left;
+		}
+		.contCardAmz:hover .coverLaCard{
+			transform:rotateY(-180deg);/*rotate(-180deg);*/
+			transform:perspective(2000px) translateX(100%);
+		}
+		.contCardAmz .coverLaCard img{
+			max-width:100%;
+			z-index:1;
+		}
+		.contCardAmz .coverLaCard::before{
+			content:'';
+			position:absolute;
+			width:9px;
+			height:150%;
+			background:#fff;
+			transform:rotate(36.5deg);
+			box-shadow:0 0 0 20px #37475a;/* #47bfce;*/
+			transition:0.6s;
+			transition-delay:1s;
+		}
+		.contCardAmz:hover .coverLaCard::before{
+			width:0;
+			box-shadow:0 0 0 250px #e47911;/*#daf;*/
+			transform:rotate(143.5deg);/*143.5deg*/
+		}
+		.contCardAmz .detailsLaCard{
+			background:#fff;
+			position:absolute;
+			top:0;
+			left:0;
+			width:100%;
+			height:100%;
+			display:flex;
+			justify-content:center;
+			align-items:center;
+			overflow:hidden;
+			text-align:center;
+			z-index:1;
+		}
+		.contCardAmz .detailsLaCard h3{
+			font-weight:500;
+			margin:5px 0;
+		}
+		.contCardAmz .detailsLaCard h2{
+			font-size:1.5em;
+			color:#040105;
+			font-weight:600;
+			margin:5px 0;
+		}
+		.contCardAmz .detailsLaCard a{
+			display:inline-block;
+			padding:8px 20px;
+			background:#040105;
+			color:#daf;
+			margin-top:6px;
+			letter-spacing:1px;
+			border-radius:25px;
+			font-weight:500;
+			text-decoration:none;
+		}
+	</style>
+</head>
+<body>
+<div class="containerCardAmz">
+
+<div class="contCardAmz">
+	<div class="coverLaCard">
+		<img src="img1.png"/>
+	</div>
+	<div class="detailsLaCard">
+		<div>
+			<img src="ama1.jpg"/>
+			<h2>Xiaomi Poco X3 Pro
+						</h2>
+					<p>Xiaomi Poco X3 Pro 6GB/128GB Negro (Ghost Black) Dual SIM
+						
+						</p>
+					<a target="_blank" href="https://www.amazon.com.mx/gp/product/B08YJFSHFM/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B08YJFSHFM&linkCode=as2&tag=carrusel23-20&linkId=3e8b2b1e856e23b6cadba4b90daf1701">Comprar en Amazon
+						</a>
+		</div>
+	</div>
+</div>
+
+<div class="contCardAmz">
+	<div class="coverLaCard">
+		<img src="img1.png"/>
+	</div>
+	<div class="detailsLaCard">
+		<div>
+			<img src="ama2.jpg"/>
+			<h2>SAMSUNG A12
+						</h2>
+					<p>SAMSUNG A12 4GB 64GB Azul Desbloqueado
+						</p>
+					<a target="_blank" href="https://www.amazon.com.mx/gp/product/B017U1ZFWY/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B017U1ZFWY&linkCode=as2&tag=carrusel23-20&linkId=7b4a7dc90fe8b765aaea32fae28f1c81">Comprar en Amazon</a>
+				
+		</div>
+	</div>
+</div>
+
+<div class="contCardAmz">
+	<div class="coverLaCard">
+		<img src="img1.png"/>
+	</div>
+	<div class="detailsLaCard">
+		<div>
+			<img src="ama3.jpg"/>
+			<h2>HUAWEI Watch Fit- Reloj Inteligente
+						</h2>
+					<p>Pantalla AMOLED 1.64", 4GB, Bluetooth, Correa de Silicona Negro
+						</p>
+					<a target="_blank" href="https://www.amazon.com.mx/gp/product/B08G58CGT9/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B08G58CGT9&linkCode=as2&tag=carrusel23-20&linkId=1a6803c06430b51a80945a024dcc4ffd">Comprar en Amazon
+						</a>
+		</div>
+	</div>
+</div>
+
+<div class="contCardAmz">
+	<div class="coverLaCard">
+		<img src="img1.png"/>
+	</div>
+	<div class="detailsLaCard">
+		<div>
+			<img src="ama4.jpg"/>
+			<h2>Pebble M350
+						</h2>
+					<p>Pebble M350 Mouse Inalámbrico Bluetooth - Rosa
+						</p>
+					<a target="_blank" href="https://www.amazon.com.mx/gp/product/B07X5GHZYJ/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B07X5GHZYJ&linkCode=as2&tag=carrusel23-20&linkId=dba3695fa27e9dcb97e44c018b61ceb6">Comprar en Amazon
+						</a>
+		</div>
+	</div>
+</div>
+
+<div class="contCardAmz">
+	<div class="coverLaCard">
+		<img src="img1.png"/>
+	</div>
+	<div class="detailsLaCard">
+		<div>
+			<img src="ama5.jpg"/>
+			<h2>Kit Teclado y Mouse LOGITECH 
+						</h2>
+					<p>Kit Teclado + Mouse LOGITECH INALAMBRICO Bluetooth K380, M350
+						</p>
+					<a target="_blank" href="https://www.amazon.com.mx/gp/product/B09GBQC5KG/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B09GBQC5KG&linkCode=as2&tag=carrusel23-20&linkId=422116e4c41259e20dcec83bc818e904">Comprar en Amazon
+						</a>
+		</div>
+	</div>
+</div>
+
+<div class="contCardAmz">
+	<div class="coverLaCard">
+		<img src="img1.png"/>
+	</div>
+	<div class="detailsLaCard">
+		<div>
+			<img src="ama6.jpg"/>
+			<h2>Logitech Mouse Inalámbrico
+						</h2>
+					<p>Logitech M185 Mouse Inalámbrico Ambidiestro Negro
+						</p>
+					<a target="_blank" href="https://www.amazon.com.mx/gp/product/B004YAVF8I/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B004YAVF8I&linkCode=as2&tag=carrusel23-20&linkId=6f95499695c7e16933ac6d16006f484a">Comprar en Amazon
+						</a>
+		</div>
+	</div>
+</div>
+
+<div class="contCardAmz">
+	<div class="coverLaCard">
+		<img src="img1.png"/>
+	</div>
+	<div class="detailsLaCard">
+		<div>
+			<img src="ama7.jpg"/>
+			<h2>Apple EarPods
+						</h2>
+					<p>Apple EarPods con Conector Lightning
+						</p>
+					<a target="_blank" href="https://www.amazon.com.mx/gp/product/B01M0GB8CC/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B01M0GB8CC&linkCode=as2&tag=carrusel23-20&linkId=d397f18a41f936092783ed74aa894a2f">Comprar en Amazon
+						</a>
+		</div>
+	</div>
+</div>
+
+<div class="contCardAmz">
+	<div class="coverLaCard">
+		<img src="img1.png"/>
+	</div>
+	<div class="detailsLaCard">
+		<div>
+			<img src="ama8.jpg"/>
+			<h2>Apple AirPods Tercera generación
+						</h2>
+					<p>Apple Nuevos AirPods (Tercera generación)
+						</p>
+					<a target="_blank" href="https://www.amazon.com.mx/gp/product/B09JQL3NWT/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B09JQL3NWT&linkCode=as2&tag=carrusel23-20&linkId=ed42f729e6289d506d1c590266f0f834">Comprar en Amazon
+						</a>
+		</div>
+	</div>
+</div>
+
+<div class="contCardAmz">
+	<div class="coverLaCard">
+		<img src="img1.png"/>
+	</div>
+	<div class="detailsLaCard">
+		<div>
+			<img src="ama9.jpg"/>
+			<h2>Apple AirPods
+						</h2>
+					<p>Apple AirPods con Estuche de Carga
+						</p>
+					<a target="_blank" href="https://www.amazon.com.mx/gp/product/B07RK58K76/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B07RK58K76&linkCode=as2&tag=carrusel23-20&linkId=7d042a2edcfb995ba5038c4277979211">Comprar en Amazon
+						</a>
+		</div>
+	</div>
+</div>
+
+<div class="contCardAmz">
+	<div class="coverLaCard">
+		<img src="img1.png"/>
+	</div>
+	<div class="detailsLaCard">
+		<div>
+			<img src="ama10.jpg"/>
+			<h2>Bocinas Bluetooth Alexa
+						</h2>
+					<p>Bocinas Bluetooth, con 24 horas de reproducción, emparejamiento inalámbrico, asistente de voz, micrófono integrado
+						</p>
+					<a target="_blank" href="https://www.amazon.com.mx/gp/product/B07Y8H8STR/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B07Y8H8STR&linkCode=as2&tag=carrusel23-20&linkId=5738a30924f66bdc624f2baaf83826aa">Comprar en Amazon
+						</a>
+		</div>
+	</div>
+</div>
+
+<div class="contCardAmz">
+	<div class="coverLaCard">
+		<img src="img1.png"/>
+	</div>
+	<div class="detailsLaCard">
+		<div>
+			<img src="ama11.jpg"/>
+			<h2>Tronsmart Force Bocinas Bluetooth
+						</h2>
+					<p>Bocinas resistentes al agua sonido estéreo de 40 W, altavoz inalámbrico, 15 horas de reproducción, alcance de 30 m
+						</p>
+					<a target="_blank" href="https://www.amazon.com.mx/gp/product/B07MGSWD1F/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B07MGSWD1F&linkCode=as2&tag=carrusel23-20&linkId=3309c2d750bf1ce55bb1a0adf650cdfd">Comprar en Amazon	
+						</a>
+		</div>
+	</div>
+</div>
+
+<div class="contCardAmz">
+	<div class="coverLaCard">
+		<img src="img1.png"/>
+	</div>
+	<div class="detailsLaCard">
+		<div>
+			<img src="ama12.jpg"/>
+			<h2>JBL Flip 5 Bocinas
+						</h2>
+					<p>JBL Flip 5 Altavoz Bluetooth portátil Impermeable, Negro
+						</p>
+					<a target="_blank" href="https://www.amazon.com.mx/gp/product/B07QK2SPP7/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B07QK2SPP7&linkCode=as2&tag=carrusel23-20&linkId=dddc06ec803a92fc221f17e8baa2ad5a">Comprar en Amazon	
+						</a>
+		</div>
+	</div>
+</div>
+
+<div class="contCardAmz">
+	<div class="coverLaCard">
+		<img src="img1.png"/>
+	</div>
+	<div class="detailsLaCard">
+		<div>
+			<img src="ama13.jpg"/>
+			<h2>2021 Dell Inspiron 15.6"
+						</h2>
+					<p>FHD Touchscreen Laptop, AMD Ryzen 5-3450U, 8GB RAM Memory, 256GB PCIe SSD, AMD Radeon Vega 8 Graphics, Webcam, Bluetooth, Wi-Fi, HDMI, Windows 10 in S Mode
+						</p>
+					<a target="_blank" href="https://www.amazon.com.mx/gp/product/B094L3BYRP/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B094L3BYRP&linkCode=as2&tag=carrusel23-20&linkId=3b43f3b9a66b714abca80ad06e200924">Comprar en Amazon
+						</a>
+		</div>
+	</div>
+</div>
+
+<div class="contCardAmz">
+	<div class="coverLaCard">
+		<img src="img1.png"/>
+	</div>
+	<div class="detailsLaCard">
+		<div>
+			<img src="ama14.jpg"/>
+			<h2>Smartwatch Pulsera Inteligente
+						</h2>
+					<p>Relojes Deportivo Pantalla Táctil Completa de 1.4 Pulgadas,Pulsera Deportiva Bluetooth，para Android y iOS Móvil,reloj deportivo Impermeable IPX7 Pantalla completa táctil monitores de actividad con Pulsómetro y Presión Arterial,Monitor de Calorías, Sueño,Podómetro,Relojes Deportes GPS Monitor de Pasos, Reloj Deportivo Inteligente para Mujeres y Hombres (Azul verde)
+						</p>
+					<a target="_blank" href="https://www.amazon.com.mx/gp/product/B08B6CSMW4/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B08B6CSMW4&linkCode=as2&tag=carrusel23-20&linkId=df4518a72dbe7b042a5cd4a4d6874d17">Comprar en Amazon
+						</a>
+		</div>
+	</div>
+</div>
+
+<div class="contCardAmz">
+	<div class="coverLaCard">
+		<img src="img1.png"/>
+	</div>
+	<div class="detailsLaCard">
+		<div>
+			<img src="ama14.jpg"/>
+			<h2>Smartwatch Reloj Inteligente,Salandens 1.72"
+						</h2>
+					<p>Hombre-Mujer reloges Inteligente, Pantalla Táctil Completa Impermeable IP68, Con Pulsómetro y Presión Arterial, Monitor de Calorías,Sueño,Podómetro,Relojes Deportes GPS Monitor de Pasos,Notificaciones Inteligentes, Banda Inteligente para Hombres, Mujeres Compatible con IOS, Android. 
+						</p>
+					<a target="_blank" href="https://www.amazon.com.mx/gp/product/B09HHCC944/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B09HHCC944&linkCode=as2&tag=carrusel23-20&linkId=c78a258d5ba5b267a0575c505e39a59c">Comprar en Amazon</a>
+				
+		</div>
+	</div>
+</div>
+
+<div class="contCardAmz">
+	<div class="coverLaCard">
+		<img src="img1.png"/>
+	</div>
+	<div class="detailsLaCard">
+		<div>
+			<img src="ama15.jpg"/>
+			<h2>Jecoo Audífonos Inalámbricos Bluetooth 5.0
+						</h2>
+					<p>Auriculares inalámbricos Impermerable con Micrófono de Reducción de Ruido Mini Audífonos Deportivos para iPhone Android
+						</p>
+					<a target="_blank" href="https://www.amazon.com.mx/gp/product/B096VB1LVW/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B096VB1LVW&linkCode=as2&tag=carrusel23-20&linkId=39ee055ff6a2a4875cbc456342e25126">Comprar en Amazon
+						</a>
+		</div>
+	</div>
+</div>
+
+<div class="contCardAmz">
+	<div class="coverLaCard">
+		<img src="img1.png"/>
+	</div>
+	<div class="detailsLaCard">
+		<div>
+			<img src="ama16.jpg"/>
+			<h3>New Apple Watch</h3>
+			<h2><sup>$</sup>450</h2>
+			<a href="#">Buy it Now</a>
+		</div>
+	</div>
+</div>
+	
+<div class="contCardAmz">
+	<div class="coverLaCard">
+		<img src="img1.png"/>
+	</div>
+	<div class="detailsLaCard">
+		<div>
+			<img src="ama17.jpg"/>
+			<h2>Audífonos inalámbricos Bluetooth 5.0
+						</h2>
+					<p>Auriculares Impermeables Deportivos Sonido Estéreo HiFi Reducción de Ruido, Micrófono Incorporado con Estuche de Carga 3300mAh Control táctil, Reproducción de 6 Horas para iPhone y Android Ideal para Regalo
+						</p>
+					<a target="_blank" href="https://www.amazon.com.mx/gp/product/B08JV5412N/ref=as_li_tl?ie=UTF8&camp=1789&creative=9325&creativeASIN=B08JV5412N&linkCode=as2&tag=carrusel23-20&linkId=3f2547ab17b679d2511bc76793521feb">Comprar en Amazon
+						</a>
+		</div>
+	</div>
+</div>
+			
+</div>
+</body>
+</html>

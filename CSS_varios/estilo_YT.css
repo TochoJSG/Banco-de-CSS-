@@ -1,0 +1,126 @@
+.titulos{
+	font-weight: bold;
+	font-family: Times New Roman; 
+	text-align:center;
+	font-size: 40px; 
+	color: gold;
+}
+img{
+	img-align: center;
+}
+body{
+	color: white;
+	background-color: blue;
+	background-image: url("principal.jpg");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: top center;
+}
+p{
+	text-align: justify;
+	font-color: aqua;
+	font-style: arial;
+	font-size: 18px;
+	font-weight: bold;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+div{
+	word-spacing: 4px;
+	background-color: black;
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-clip: text;
+	margin-top: 30px;
+	margin-left: 40px;
+	margin-right: 40px;
+	margin: 20 auto;
+	
+	-webkit- background-clip: text;
+	width: 1200px;
+	
+	font-style: arial;
+	font-size: 18px;
+	font-weight: bold;
+}
+h1{
+	text-align:center;
+	font-style: arial;
+	color: orange;
+	font-size: 50px;
+	text-align: center;
+	font-weight: bold;
+}
+h2{
+	text-align:center;
+	font-style: arial;
+	color: white;
+	font-size: 30px;
+	text-align: center;
+	font-weight: bold;
+}
+h3{
+	text-align:center;
+	font-style: Times New Roman;
+	color: Yellow;
+	font-size: 25px;
+	text-align: center;
+	font-weight: bold;
+}
+a{
+	color: yellow;
+	font-style: Times New Roman;
+	font-size: 25px;
+	font-weight: bold;
+}
+footer{
+	background-color: blue;
+	font-style: Times New Roman;
+	color: blue;
+	font-size: 20px;
+	text-align: center;
+	font-weight: bold;
+}
+video{
+	align: center;
+	max-width: 100%;
+	height: auto;
+	background-color: #000000;
+}
+		.video1{
+			align: top center;
+			width: 100%;
+			height: auto;
+			background-color: #000000;
+		}
+		.capa{
+			position: absolute;
+			}
+		.capa.controles{
+			background-color: #0000FF;
+			width: 600px;
+			height: 40px;
+			border-right: 25px;
+			border-left: 25px;
+			top: 360px;
+			}
+		.capa.tiempo{
+			background-color: #FF0000;
+			width: 500px;
+			height: 10px;
+			left: 50px;
+			top: 15px;
+			}
+		.capa.slider{
+			background-color: #FF0000;
+			width: 15px;
+			height: 25px;
+			top: -5px;
+			left: 0px;
+			}

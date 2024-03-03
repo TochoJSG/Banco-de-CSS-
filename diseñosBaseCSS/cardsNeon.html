@@ -1,0 +1,165 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Cards fifi</title>
+<link rel="stylesheet" type="text/css" href="estilo_cardFifi.css"/>
+<style>
+	@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+	*{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		font-family: 'Poppins', sans-serif;
+	}
+	body{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+		min-height: 100vh;
+		background: #010615;
+	}
+	.box_fifi{
+		position: relative;
+		width: 300px;
+		height: 300px;
+		display:flex;
+		justify-content: center;
+		align-items: center;
+		margin: 40px;
+		transition: 0.5s;
+		background: #060c21;
+	}
+	.box_fifi:hover{
+		height: 400px;
+	}
+	.box_fifi .imgBxFifi{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		padding: 10px;
+		box-sizing: border-box;
+	}
+	.box_fifi .imgBxFifi img{
+		max-width: 100%;
+		opacity: 0.1;
+		transition: 0.5s;
+	}
+	.box_fifi:hover .imgBxFifi img{
+		opacity: 1;
+	}
+	.box_fifi:before{
+		content:'';
+		position: absolute;
+		top: -2px;
+		left: -2px;
+		right: -2px;
+		bottom: -2px;
+		background: #fff;
+		z-index: -1;
+	}
+	.box_fifi:after{
+		content:'';
+		position: absolute;
+		top: -2px;
+		left: -2px;
+		right: -2px;
+		bottom: -2px;
+		background: #fff;
+		z-index: -2;
+		filter: blur(40px);
+	} 
+	.box_fifi:before, .box_fifi:after{
+		background: linear-gradient(235deg,#89ff00,#010615,#00bcd4);
+	}
+	.box_fifi:nth-child(2):before, 
+	.box_fifi:nth-child(2):after{
+		background: linear-gradient(235deg,#ff005e,#010615,#fbff00);
+	}
+	.box_fifi:nth-child(3):before, 
+	.box_fifi:nth-child(3):after{
+		background: linear-gradient(235deg,#772aff,#010615,#2196F3);
+	}
+	.box_fifi .content_fifi{
+		position: absolute;
+		bottom:0;
+		left:10px;
+		right:10px;
+		height: 90px;
+		background: rgba(0,0,0,0.4);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		opacity: 0;
+		transition: 0.5s;
+	}
+	.box_fifi:hover .content_fifi{
+		opacity: 1;
+		transition: 0.5s;
+	}
+	.box_fifi .content_fifi h2{
+		font-size: 20px;
+		color: #fff;
+		font-weight: 600;
+		line-height: 20px;
+		letter-spacing: 1px;
+	}
+	.box_fifi .content_fifi span{
+		font-size: 15px;
+		color: #fff;
+		font-weight: 300;
+		line-height: 20px;
+		letter-spacing: 2px;
+	}
+</style>
+</head>
+<body>
+
+<div class="box_fifi">
+	<div class="imgBxFifi">
+		<img src="9.jpg"/>
+	</div>
+	<div class="content_fifi">
+		<h2>Adming<br><span>Desarrollo
+			</span></h2>
+	</div>
+</div>
+
+<div class="box_fifi">
+	<div class="imgBxFifi">
+		<img src="9.jpg"/>
+	</div>
+	<div class="content_fifi">
+		<h2>Adming<br><span>Desarrollo
+			</span></h2>
+	</div>
+</div>
+
+<div class="box_fifi">
+	<div class="imgBxFifi">
+		<img src="9.jpg"/>
+	</div>
+	<div class="content_fifi">
+		<h2>Adming<br><span>Desarrollo
+			</span></h2>
+	</div>
+</div>
+
+<div class="box_fifi">
+	<div class="imgBxFifi">
+		<img src="9.jpg"/>
+	</div>
+	<div class="content_fifi">
+		<h2>Adming<br><span>Desarrollo
+			</span></h2>
+	</div>
+</div>
+
+<footer>
+</footer>
+</body>
+</html>

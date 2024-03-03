@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>Card SuperFifi
+		</title>
+	<style>
+		*{
+			overflow-x:hidden;
+			width:100%;
+			box-sizing:border-box;
+			margin:0;
+			padding:0;
+			font-family:consolas;
+		}
+		body{
+			display:flex;
+			justify-content:center;
+			align-items:center;
+			min-height:100vh;
+			background:#09383e;
+		}
+		.contCardAmz{
+			position:relative;
+			width:300px;
+			height:400px;
+			background:#fff;
+			transform-style:preserve-3d;
+			/*perspective:1000px;*/
+			transform:perspective(2000px);
+			transition:1s;
+			box-shadow:inset 300px 0 50px rgba(0,0,0,0.15),
+						0 20px 20px rgba(0,0,0,0.15);
+		}
+		.contCardAmz:hover{
+			transform:perspective(2000px) /*translateX(50%);*/
+			box-shadow:inset 20px 0 50px rgba(0,0,0,0.15),
+						0 10px 10px rgba(0,0,0,0.15);
+		}
+		.contCardAmz .coverLaCard{
+			position:relative;
+			width:100%;
+			height:100%;
+			background:#fff;
+			z-index:2;
+			display:flex;
+			justify-content:center;
+			align-items:center;
+			transform-style:preserve-3d;
+			overflow:hidden;
+			transition:1s ease-in-out;
+			transform-origin:left;
+		}
+		.contCardAmz:hover .coverLaCard{
+			transform:rotateY(-180deg);/*rotate(-180deg);*/
+			transform:perspective(2000px) translateX(100%);
+		}
+		.contCardAmz .coverLaCard img{
+			max-width:100%;
+			z-index:1;
+		}
+		.contCardAmz .coverLaCard::before{
+			content:'';
+			position:absolute;
+			width:9px;
+			height:150%;
+			background:#fff;
+			transform:rotate(36.5deg);
+			box-shadow:0 0 0 20px #daf;/* #47bfce;*/
+			transition:0.6s;
+			transition-delay:1s;
+		}
+		.contCardAmz:hover .coverLaCard::before{
+			width:0;
+			box-shadow:0 0 0 250px #47bfce;/*#daf;*/
+			transform:rotate(143.5deg);/*143.5deg*/
+		}
+		.contCardAmz .detailsLaCard{
+			position:absolute;
+			top:0;
+			left:0;
+			width:100%;
+			height:100%;
+			display:flex;
+			justify-content:center;
+			align-items:center;
+			overflow:hidden;
+			text-align:center;
+			z-index:1;
+		}
+		.contCardAmz .detailsLaCard h3{
+			font-weight:500;
+			margin:5px 0;
+		}
+		.contCardAmz .detailsLaCard h2{
+			font-size:1.5em;
+			color:#040105;
+			font-weight:600;
+			margin:5px 0;
+		}
+		.contCardAmz .detailsLaCard a{
+			display:inline-block;
+			padding:8px 20px;
+			background:#040105;
+			color:#daf;
+			margin-top:6px;
+			letter-spacing:1px;
+			border-radius:25px;
+			font-weight:500;
+			text-decoration:none;
+		}
+	</style>
+</head>
+<body>
+<div class="contCardAmz">
+	<div class="coverLaCard">
+		<img src="img1.png"/>
+	</div>
+	<div class="detailsLaCard">
+		<div>
+			<img src="img2.png"/>
+			<h3>New Apple Watch</h3>
+			<h2><sup>$</sup>450</h2>
+			<a href="#">Buy it Now</a>
+		</div>
+	</div>
+</div>
+</body>
+</html>

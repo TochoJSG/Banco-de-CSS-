@@ -1,0 +1,337 @@
+<!DOCTYPE html5>
+<html5 lang="es">
+		<head>
+			<meta http-equiv="content-security-policy|Content-Type|default-style|refresh" content="text/html; width=device-width; charset=utf-8;" initial-scale="1.0"/>
+				
+				<title>Tocha | Productos</title>
+			
+			<link rel="shortcut icon|apple-touch-icon|apple-touch-icon-precomposed" href="favicon.ico" sizes="HeightxWidth|any" type="image/x-icon"/>
+			<link href="esilos_caja.css" rel="stylesheet" type="text/css"/>
+			<link href="estilos_tocha.css" rel="stylesheet" type="text/css"/>
+			<meta charset="UTF-8"> 
+			<meta name="description" content="Materias primas, iztapalapa venta desechables, bolsas biodegradables precios mayoreo en iztapalapa"/><!--Resumen preciso, para usuario. Descripcion de sitio  160 caracteres-->
+			<meta name="keywords" content="desechable, evento, fiesta, biodegradable, bolsa, bolsas, materias primas"/>
+			<meta name="author" content="Jorge" />
+			<meta name="copyright" content="Propietario del copyright" />
+			
+			<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+			<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"/>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+			<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+			<script src="catalogo_tocha.json"></script>
+		</head>
+	
+	<body style="width: 100%; max-width: 1500px;">
+
+	<div class="container">
+	<h3>Su carrito 
+		</h3>
+	<table class="table">
+		<thead>
+			<tr>
+				<th scope="col">#
+					</th>
+				<th scope="col">Producto
+					</th>
+				<th scope="col">Cantidad
+					</th>
+				<th scope="col">Accion
+					</th>
+				<th scope="col">Total
+					</th>
+			</tr>
+		</thead>
+		<tbody id="items"></tbody>
+		<tfoot>
+			<tr id="footer">
+				<th scope="row" colspan="5">Carrito Vacio - Comience a Comprar !!</th>
+			</tr>
+		</tfoot>
+	</table>
+	<div class="row" id="cards"></div>
+	</div>
+	
+	<template id="template-footer"><!--Compras-->
+		<th scope="row" colspan="2">Total Productos
+			</th>
+		<td><button class="btn btn-danger btn-sm" id="vaciar-carrito">Vaciar Todo
+			</button></td>
+		<td class="font-weight-bold">$<span>5000</span></td>
+	</template>
+	
+	
+	<template id="template-carrito"><!--Un registro en carrito-->
+		<tr>
+			<th scope="row">id
+				</th>
+		
+		<td>P1</td><!--Producto-->
+		<td>1</td><!--Cantidad-->
+		
+		<td>
+			<button class="btn btn-info btn-sm">+
+				</button>
+			<button class="btn btn-danger btn-sm">-
+				</button>
+		</td>
+		<td>$<span>500</span></td><!--Precio-->
+		</tr>
+	</template>
+	
+	<template id="template-card">
+      <div class="col-12 mb-2">
+        <div class="card">
+          <div class="card-body">
+            <h5>Titulo</h5>
+            <p>precio</p>
+            <button class="btn btn-dark">Comprar</button>
+          </div>
+        </div>
+      </div>
+    </template>
+
+
+	<!--<script>
+	/*const consumo = 'catalogo_tocha.json'
+	const catalogo[
+		  {
+			"precio": 55,
+			"id": 1,
+			"encabezado": "Bolsa Negra Grande",
+			"thumbnailUrl": "https://picsum.photos/id/30/600"
+		  },
+		  {
+			"precio": 55,
+			"id": 2,
+			"encabezado": "Bolsa 5",
+			"thumbnailUrl": "https://picsum.photos/id/30/600"
+		  },
+		  {
+			"precio": 55,
+			"id": 3,
+			"encabezado": "Bolsa 3",
+			"thumbnailUrl": "https://picsum.photos/id/30/600"
+		  },
+		  {
+			"precio": 55,
+			"id": 4,
+			"encabezado": "Bolsa 2",
+			"thumbnailUrl": "https://picsum.photos/id/30/600"
+		  },
+		  {
+			"precio": 55,
+			"id": 5,
+			"encabezado": "Bolsa 1",
+			"thumbnailUrl": "https://picsum.photos/id/30/600"
+		  },
+		  {
+			"precio": 690,
+			"id": 6,
+			"encabezado": "Plato 855",
+			"thumbnailUrl": "https://picsum.photos/id/30/600"
+		  },
+		  {
+			"precio": 700,
+			"id": 7,
+			"encabezado": "Plato Ondo PH8",
+			"thumbnailUrl": "https://picsum.photos/id/30/600"
+		  },
+		  {
+			"precio": 415,
+			"id": 8,
+			"encabezado": "Plato Cuadrado 066",
+			"thumbnailUrl": "https://picsum.photos/id/30/600"
+		  },
+		  {
+			"precio": 1045,
+			"id": 9,
+			"encabezado": "Vaso 16L Reyma",
+			"thumbnailUrl": "https://picsum.photos/id/30/600"
+		  },
+		  {
+			"precio": 620,
+			"id": 10,
+			"encabezado": "Plato pastelero",
+			"thumbnailUrl": "https://picsum.photos/id/30/600"
+		  },
+		  {
+			"precio": 875,
+			"id": 11,
+			"encabezado": "Vaso 8 Jaguar",
+			"thumbnailUrl": "https://picsum.photos/id/30/600"
+		  },
+		  {
+			"precio": 760,
+			"id": 12, 
+			"encabezado": "Vaso Termico Dart 10",
+			"thumbnailUrl": "https://picsum.photos/id/30/600"
+		  },
+		  {
+			"precio": 475,
+			"id": 13,
+			"encabezado": "Vaso fiestero Rojo",
+			"thumbnailUrl": "https://picsum.photos/id/30/600"
+		  },
+		  {
+			"precio": 1000,
+			"id": 14,
+			"encabezado":"Vaso Termico Dart 1L",
+			"thumbnailUrl": "https://picsum.photos/id/30/600"
+		  }
+		];*/
+		const cards = document.getElementById('cards')
+		const items = document.getElementById('items')
+		const footer = document.getElementById('footer')
+		const templateCard = document.getElementById('template-card').content
+		const templateFooter = document.getElementById('template-footer').content
+		const templateCarrito = document.getElementById('template-carrito').content
+		const fragment = document.createDocumentFragment()
+		let carrito = {}
+
+		// Eventos
+		// El evento DOMContentLoaded es disparado cuando el documento HTML ha sido completamente cargado y parseado
+		document.addEventListener('DOMContentLoaded', e => { fetchData() });
+		/*cards.addEventListener('click', e => { addCarrito(e) });
+		items.addEventListener('click', e => { btnAumentarDisminuir(e) })*/
+		
+		// Traer productos
+		/*
+		const fetchData = async () => {
+			const res = await fetch(catalogo)
+			const data = await res.json()
+			catalogo.forEach(data=>{
+				
+			})
+			// console.log(data)
+			pintarCards(data)
+		}*/
+		const fetchData = async () => {
+		const response = await fetch('catalogo_tocha.json')
+		const data = await response.json()
+		fetch('catalogo_tocha.json') 
+            .then(response => response.json())
+				.then(data => {
+				for (let val of data){  
+					console.log(data.precio)
+					console.log(data.id)
+					console.log(data.encabezado)
+				}).catch(error => console.log(error))
+				}
+		}
+/*
+// Pintar productos
+const pintarCards = data => {
+    data.forEach(item => {
+        templateCard.querySelector('h5').textContent = item.encabezado
+        templateCard.querySelector('p').textContent = item.precio
+        templateCard.querySelector('button').dataset.id = item.id
+        const clone = templateCard.cloneNode(true)
+        fragment.appendChild(clone)
+    })
+    cards.appendChild(fragment)
+}
+
+// Agregar al carrito
+const addCarrito = e => {
+    if (e.target.classList.contains('btn-dark')) {
+        // console.log(e.target.dataset.id)
+        // console.log(e.target.parentElement)
+        setCarrito(e.target.parentElement)
+    }
+    e.stopPropagation()
+}
+
+const setCarrito = item => {
+    // console.log(item)
+    const producto = {
+        encabezado: item.querySelector('h5').textContent,
+        precio: item.querySelector('p').textContent,
+        id: item.querySelector('button').dataset.id,
+        cantidad: 1
+    }
+    // console.log(producto)
+    if (carrito.hasOwnProperty(producto.id)) {
+        producto.cantidad = carrito[producto.id].cantidad + 1
+    }
+
+    carrito[producto.id] = { ...producto }
+    
+    pintarCarrito()
+}
+
+const pintarCarrito = () => {
+    items.innerHTML = ''
+
+    Object.values(carrito).forEach(producto => {
+        templateCarrito.querySelector('th').textContent = producto.id
+        templateCarrito.querySelectorAll('td')[0].textContent = producto.encabezado
+        templateCarrito.querySelectorAll('td')[1].textContent = producto.cantidad
+        templateCarrito.querySelector('span').textContent = producto.precio * producto.cantidad
+        
+        //botones
+        templateCarrito.querySelector('.btn-info').dataset.id = producto.id
+        templateCarrito.querySelector('.btn-danger').dataset.id = producto.id
+
+        const clone = templateCarrito.cloneNode(true)
+        fragment.appendChild(clone)
+    })
+    items.appendChild(fragment)
+
+    pintarFooter()
+}
+
+const pintarFooter = () => {
+    footer.innerHTML = ''
+    
+    if (Object.keys(carrito).length === 0) {
+        footer.innerHTML = "<th scope='row' colspan='5'>Carrito vacío con innerHTML</th>"
+        return
+    }
+    
+    // sumar cantidad y sumar totales
+    const nCantidad = Object.values(carrito).reduce((acc, { cantidad }) => acc + cantidad, 0)
+    const nPrecio = Object.values(carrito).reduce((acc, {cantidad, precio}) => acc + cantidad * precio ,0)
+    // console.log(nPrecio)
+
+    templateFooter.querySelectorAll('td')[0].textContent = nCantidad
+    templateFooter.querySelector('span').textContent = nPrecio
+
+    const clone = templateFooter.cloneNode(true)
+    fragment.appendChild(clone)
+
+    footer.appendChild(fragment)
+
+    const boton = document.querySelector('#vaciar-carrito')
+    boton.addEventListener('click', () => {
+        carrito = {}
+        pintarCarrito()
+    })
+}
+
+const btnAumentarDisminuir = e => {
+    // console.log(e.target.classList.contains('btn-info'))
+    if (e.target.classList.contains('btn-info')) {
+        const producto = carrito[e.target.dataset.id]
+        producto.cantidad++
+        carrito[e.target.dataset.id] = { ...producto }
+        pintarCarrito()
+    }
+
+    if (e.target.classList.contains('btn-danger')) {
+        const producto = carrito[e.target.dataset.id]
+        producto.cantidad--
+        if (producto.cantidad === 0) {
+            delete carrito[e.target.dataset.id]
+        } else {
+            carrito[e.target.dataset.id] = {...producto}
+        }
+        pintarCarrito()
+    }
+    e.stopPropagation()
+}
+	*/
+	</script>-->
+		<script src="app.js"></script>
+	</body>
+	
+</html5>

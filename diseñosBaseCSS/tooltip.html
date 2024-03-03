@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--<meta http-equiv="X-UA-Compatible" content="ie=edge"/>-->
+	<title>Tooltip</title>
+	<!--<link rel="stylesheet" href="estilo_cards.css"/>-->
+	<style>
+	/*@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');*/
+	*{
+		box-sizing:border-box;
+		margin:0;
+		padding:0;
+		font-family:'Poppins',sans-serif;
+		scroll-behavior:smooth;
+	}
+	body{
+		display:flex;
+		justify-content:center;
+		align-items:center;
+		height:100vh;
+		background:#040105;
+		width:100%;
+		overflow:hidden;
+	}
+	ul{
+		margin:0;
+		padding:0;
+		position:relative;
+		display:flex;
+	}
+	ul li{
+		position:relative;
+		list-style:none;
+		width:20px;
+		height:20px;
+		background:#daf;
+		margin:0 20px;
+		border-radius:50%;
+		transiton:0.666s;
+		cursor:pointer;
+	}
+	ul li:hover{
+		background:#ffad;/*86ff3b*/
+		box-shadow:0 0 0 4px #333,
+				   0 0 0 6px #ffad;
+	}
+	
+	
+	
+	ul li .contentTip{
+		position:absolute;
+		bottom:55px;
+		width:400px;
+		background:#fff;
+		padding:16px;
+		box-sizing:border-box;
+		border-radius:3px;
+		visibility:hidden;
+		opacity:0;
+		transiton:0.666s;
+		transform:translateX(-50%) translateY(-50px);
+	}
+	ul li:hover .contentTip{
+		visibility:visible;
+		opacity:1;
+		transform:translateX(-50%) translateY(0px);
+	}
+	ul li .contentTip:before{
+		content:'';
+		position:absolute;
+		width:30px;
+		height:30px;
+		background:#fff;
+		bottom:-15px;
+		left:194px;
+		transform:rotate(45deg);
+	}
+	ul li .contentTip h2{
+		margin:0;
+		padding:0;
+	}
+	</style>
+</head>
+<body>
+<ul>
+	<li><div class="contentTip">
+		<h2>Titulo Bla bla
+			</h2>
+		<p> Bla bla Bla bla Bla bla Bla bla Bla bla Bla bla
+			</p>
+	</div></li>
+	<li><div class="contentTip">
+		<h2>Titulo Bla bla
+			</h2>
+		<p> Bla bla Bla bla Bla bla Bla bla Bla bla Bla bla
+			</p>
+	</div></li>
+	<li><div class="contentTip">
+		<h2>Titulo Bla bla
+			</h2>
+		<p> Bla bla Bla bla Bla bla Bla bla Bla bla Bla bla
+			</p>
+	</div></li>
+</ul>
+<script>
+	const menuToggle=document.querySelector('.menuToggle');
+	const navigation=document.querySelector('.navigation');
+	menuToggle.onclick=function(){
+		menuToggle.classList.toggle('active');
+		navigation.classList.toggle('active');
+	}
+	window.addEventListener('scroll',function(){
+		const header=document.querySelector('header');
+		header.classList.toggle('sticky',window.scrollY>0);
+	});
+	function toggleMenu(){
+		menuToggle.classList.remove('active');
+		navigation.classList.remove('active');
+	}
+</script>
+</body>
+</html>

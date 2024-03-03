@@ -1,0 +1,138 @@
+<!DOCTYPE html5>
+<html5 lang="es">
+		<head>
+		    <meta charset="UTF-8">
+			<meta http-equiv="content-security-policy|Content-Type|default-style|refresh" content="text/html; width=device-width; charset=utf-8;" initial-scale="1.0"/>
+				
+				<title>Tocha | Materias Primas</title>
+				
+			<link rel="shortcut icon|apple-touch-icon|apple-touch-icon-precomposed" href="favicon2.ico" sizes="HeightxWidth|any" type="image/x-icon"/>
+			
+			<link href="estilos_tocha.css" rel="stylesheet" type="text/css"/>
+			
+			<meta name="description" content="Materias primas, iztapalapa venta desechables, bolsas biodegradables precios mayoreo en iztapalapa"/><!--Resumen preciso, para usuario. Descripcion de sitio  160 caracteres-->
+			<meta name="keywords" content="desechable, iztapalapa, biodegradable, bolsa, bolsas, materias primas"/>
+			<meta name="author" content="Jorge" />
+			<meta name="copyright" content="Propietario del copyright" />
+<script>
+/*===========================================================
+=            funciones del cronometro tiempoMesa            =
+===========================================================*/
+
+  var inicio=0;
+  var timeout=0;
+
+ window.onload = function empezar(){
+    if(timeout==0){
+      
+      // Obtenemos el valor actual
+      inicio=vuelta=new Date().getTime();
+ 
+      // iniciamos el proceso
+      funcionando();
+
+    }
+
+  }
+ 
+  function funcionando()
+  {
+    // obteneos la fecha actual
+    var actual = new Date().getTime();
+ 
+    // obtenemos la diferencia entre la fecha actual y la de inicio
+    var diff=new Date(actual-inicio);
+ 
+    // mostramos la diferencia entre la fecha actual y la inicial
+    var result=LeadingZero(diff.getUTCHours())+":"+LeadingZero(diff.getUTCMinutes())+":"+LeadingZero(diff.getUTCSeconds());
+
+    var x = document.getElementById("allElemets").querySelectorAll(".tiempoMesaClass");
+	var i;
+	for (i = 0; i < x.length; i++) {
+	document.getElementsByClassName("tiempoMesaClass")[i].innerHTML= result;
+
+	}
+
+    // Indicamos que se ejecute esta función nuevamente dentro de 1 segundo
+    timeout=setTimeout("funcionando()",1000);
+	
+  }
+ 
+  /* Funcion que pone un 0 delante de un valor si es necesario */
+  function LeadingZero(Time) {
+    return (Time < 10) ? "0" + Time : + Time;
+  }
+
+
+/*=====  End of funciones del cronometro tiempoMesa  ======*/
+</script>
+
+<script>
+	$(".bubbles").each(function(){
+    $(this).hover(function() { 
+        pause($(this));
+    }, function() {
+        play(4000, $(this));
+    });
+	});
+	
+	/*$(".bubbles").each(function(){
+    var self = this;
+    $(this).hover(function() { 
+        pause($(self));
+    }, function() {
+        play(4000, $(self));
+    });
+	});*/
+	
+	
+	function pause(pauseMe) {
+		if (pauseMe == $("#leftBubble")) {
+			clearTimeout(timer1);                        //this is never reached
+		} else if (pauseMe == $("#rightBubble")) {
+			clearTimeout(timer2);                        //nor this
+		}
+	}
+	</script>
+
+</head>
+<body>
+<div data-role="header" data-theme="b">
+  <h1>MESAS</h1>
+</div>
+</body>
+
+<div id="cuentas" class="ui-grid-b" style="margin-top:10px">
+
+  <?
+
+
+  $query = "select idd, mesa, responsable, total, horallegada from mesas order by mesa+0";
+  $result = qry($query);
+  $result2 = qry($query);
+  $field_cnt = mysqli_fetch_array($result2); 
+  if (is_null($field_cnt)) { ?>
+   <h2 align="center">No hay mesas abiertas, selecciona <span>NUEVA MESA</span> para iniciar pedido.</h2>
+ <? }else {
+   while($row = mysqli_fetch_array($result)) { ?>
+    <div id="allElemets" class="ui-block-b">    
+      <a id="mesaid" href="?page=cuenta&c=<?= $row['mesa']?>" class="ui-btn ui-shadow ui-btn-b categoria" data-ajax="false">MESA:<?= $row['mesa']?>
+      <p>$&nbsp;<?=number_format($row['total'])?></p>
+      <p><?=$row['responsable']?></p>
+      <p id='tiempoMesa' class='tiempoMesaClass'>00:00:00</p>
+      <p id='tiempoMesa' class='tiempoMesaClass'>00:00:00</p>
+      <p id='tiempoMesa' class='tiempoMesaClass'>00:00:00</p>
+      <p id='tiempoMesa' class='tiempoMesaClass'>00:00:00</p>
+      <p id='tiempoMesa' class='tiempoMesaClass'>00:00:00</p>
+      <p id='tiempoMesa' class='tiempoMesaClass'>00:00:00</p>
+    </a>
+  </div> 
+  <?
+	} }
+	?>
+</div>
+
+	<img id="leftBubble" class="bubbles" src="01.jpg" />
+	<img id="rightBubble" class="bubbles" src="02.jpg" />
+
+</html5>

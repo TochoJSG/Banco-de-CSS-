@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta http-equiv="content-security-policy|Content-Type|default-style|refresh" content="text/html; width=device-width; charset=utf-8;" initial-scale="1.0"/>
+	
+	<title>Consumo Recursos ML</title>
+
+<link rel="shortcut icon|apple-touch-icon|apple-touch-icon-precomposed" href="favicon.ico" sizes="HeightxWidth|any" type="image/x-icon"/>
+<meta charset="UTF-8"/> 
+<meta name="author" content="Jorge" />
+<meta name="copyright" content="Propietario del copyright" />
+<style>
+	*{
+		margin:0;
+		padding:0;
+		box-sizing:border-box;
+	}
+	body{
+		display:flex;
+		justify-content:center;
+		align-items:center;
+		min-height:100vh;
+		/*background: radial-gradient(#f2761e,#ef4921);*/
+	}
+	.cont_cara{
+		position:relative;
+		display:flex;
+		justify-content:center;
+		align-items:center;
+		height:100vh;
+		width:100%;
+	}
+	.cont_cara .cara{
+		position:relative;
+		width:300px;
+		height:300px;
+		border-radius:50%;
+		background:#ffcd00;
+		display:flex;
+		justify-content:center;
+		align-items:center;
+		margin:0 25px;
+	}
+	.cont_cara .cara:hover{
+		background:linear-gradient(180deg,#f44336,#f44336,#ffcd00);
+		cursor:url('cursor.png'),pointer;
+	}
+	.cont_cara .cara:before{
+		content:'';
+		position:absolute;
+		top:180px;
+		width:150px;
+		height:70px;
+		border-bottom-left-radius:70px;
+		border-bottom-right-radius:70px;
+		background:#b57700;
+		transition:0.5s;
+	}
+	.cont_cara .cara:hover:before{
+		top:210px;
+		width:150px;
+		height:20px;
+		border-bottom-left-radius:0px;
+		border-bottom-right-radius:0px;
+		background:#9d0b00;
+	}
+	.cont_cara .cara .eyeS{
+		position:relative;
+		top:-40px;
+		display:flex;
+		flex-wrap:wrap;
+	}
+	.cont_cara .cara .eyeS .eyes{
+		position:relative;
+		width:80px;
+		height:80px;
+		display:block;
+		margin:0 15px;
+		background:#fff;
+		border-radius:50%;
+	}
+	.cont_cara .cara .eyeS .eyes:before{
+		content:'';
+		position:absolute;
+		top:50%;
+		left:25px;
+		transform:translate(-50%,-50%);
+		width:40px;
+		height:40px;
+		background:#040105;
+		border-radius:50%;
+	}
+	.cont_cara h2{
+		position:absolute;
+		top:75px;
+		font-size:3em;
+		color:#daff;
+	}
+	.cont_cara h2:last-child{
+		position:absolute;
+		top:initial;
+		bottom:75px;
+		font-size:3em;
+		color:#fff;
+	}
+</style>
+</head>
+	
+<body>	
+	<div class="cont_cara">
+		<div class="cara">
+			<div class="eyeS">
+				<span class="eyes"></span>
+				<span class="eyes"></span>
+			</div>
+		</div>
+	</div>
+	<!--<script type="text/javascript"><!--Scrollbar--
+		let progress = document.getElementById('progressbar');
+		let totalHeight = document.body.scrollHeight - window.innerHeight;
+		window.onscroll = function(){
+			let progressHeight = (window.pageYOffset / totalHeight) * 100;
+			progress.style.height = progressHeight + "%";
+		}
+	</script>-->
+	<script><!--ojos-->
+	//const ojos = document.querySelector('.box');
+	//ojos.addEventListener('mousemove', eyeball);
+		function eyeball(){
+			const eye = document.querySelectorAll('.eyes');
+			eye.forEach(function(eye){
+				let x = (eye.getBoundingClientRect().left)+(eye.clientWidth/2);
+				let y = (eye.getBoundingClientRect().top)+(eye.clientHeight/2);
+				
+				let radian = Math.atan2(event.pageX - x, event.pageY - y);
+				let rotation = (radian * (180/Math.PI) * -1) + 260;
+				eye.style.transform = "rotate("+rotation+"deg";
+			})
+		}
+		
+		document.querySelector('body').addEventListener('mousemove',eyeball);
+	</script>
+</body>
+</html>

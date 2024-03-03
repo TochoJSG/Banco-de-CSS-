@@ -1,0 +1,140 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="estilos.css">
+	<script language="javascript" src="js/jquery-1.2.6.min.js"></script>
+
+   <script type="text/javascript">
+
+        function mostrar_imagen(num,nom,sec,otro) {
+            document.getElementById('carga_img').style.display='block';
+            document.getElementById('boton_x').style.display='block';
+
+            var ruta="plano_de_imagen.php?num="+num+"&nom="+nom+"&sec="+sec+"&otro="+otro;
+            $("#carga_imagen").load(ruta);
+        };
+
+	    function nomostrar_volver() {
+	        document.getElementById('carga_img').style.display='none';
+	        document.getElementById('boton_x').style.display='none';
+	    };
+
+    </script>
+
+</head>
+
+<body>
+	<div id="contenedor">
+		<nav id="menu">
+				<li id="nav_mobile">Menú <img src="ham.png" style="width: 16px; margin-bottom: -3px"></li>
+				<div id="oculto">
+					<li><a href="#" id="inicio" >Inicio</a></li>
+					<li>Busca Foto <img src="flechita.png" width="13" height="12">
+						<ul style="display:none">
+						    <li><a class="opciones" id="por_numero" href="#">Por ID</a></li>
+						    <li><a class="opciones" id="por_nombre" href="#">Por Nombre</a></li>        
+						 </ul>
+					</li>
+					<li><a id="por_seccion" href="#">Busca x Sector</a></li>
+					<li>Habilitados <img src="flechita.png" width="13" height="12">
+						<ul style="display:none">
+						    <li><a class="opciones" id="01" href="#">Sector01</a></li>
+						    <li><a class="opciones" id="02" href="#">Sector02</a></li>
+						    <li><a class="opciones" id="03" href="#">Sector03</a></li>
+						    <li><a class="opciones" id="04" href="#">Sector04</a></li>
+						    <li><a class="opciones" id="05" href="#">Sector05</a></li>
+						    <li><a class="opciones" id="06" href="#">Sector06</a></li>		        
+						 </ul>
+					</li>
+				</div>				
+		</nav>
+
+		<div id="cabeza">
+			<div id="marco">
+				<span id="nombre_campo">Ingrese el Nº : </span><input type="number" id="cajita" name="ingreso" autofocus>
+				<input type="button" id="boton1" name="enviar" onclick="mostrar_imagen(document.getElementById('por_numero').value,'','','1');" value="Buscar">
+			</div>
+		</div>
+	</div>
+    
+	<div id="carga_img"></div>
+	<a href="#" id="boton_x" class="botonx" style="display:none;" onclick="javascript:nomostrar_volver();">X</a>
+
+		
+	</div>
+
+	<script>
+
+	//Desplegar al hacer clic
+	$('#menu li').click(function(){	
+		$(this).find('ul').slideToggle('fast');	
+	});
+
+	$('#nav_mobile').click(function(){	
+		$('#oculto').slideToggle('fast');	
+	});
+
+	$(document).ready(function() {
+
+		$('#inicio').click(function(){
+			$('#cabeza').css('display', 'none');
+		});
+
+	    $('#por_numero').click(function(){
+	    	$('#cabeza').css('display', 'Block');
+	        $('span#nombre_campo').text('Ingrese el Nº : ');
+	        $('#cajita').focus();
+	    }); 
+
+	    $('#por_nombre').click(function(){
+	    	$('#cabeza').css('display', 'Block');
+	        $('span#nombre_campo').text('Ingrese el Nombre : ');
+	        $('#cajita').focus();
+	    }); 
+
+	    $('#por_seccion').click(function(){
+			if($('#cabeza').css('display') == 'none')
+			{
+		    	$('#cabeza').css('display', 'Block');
+		        $('span#nombre_campo').text('Ingrese Nº del Sector : ');
+		        $('#cajita').focus();
+			}else {
+				$('#cabeza').css('display', 'none');
+			}
+	    }); 
+
+	    $('#01').click(function(){
+	    	$('#cabeza').css('display', 'None');
+	    }); 
+
+	    $('#02').click(function(){
+	    	$('#cabeza').css('display', 'None');
+	    }); 
+
+	    $('#03').click(function(){  
+	        $('#cabeza').css('display', 'None');
+	    }); 
+
+	    $('#04').click(function(){
+	        $('#cabeza').css('display', 'None');
+	    }); 
+
+	    $('#05').click(function(){
+	        $('#cabeza').css('display', 'None');
+	    }); 
+    	
+       	$('#06').click(function(){
+       		$('#cabeza').css('display', 'None');
+       	});
+
+	});  
+
+	</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>EfectoScroll</title>
+	<!--<link rel="stylesheet" href="estilo_scroll.css">-->
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			font-family: 'Poppins', sans-serif;
+		}
+		body{
+			background: #323232;
+		}
+		.bg{
+			position: relative;
+			width: 100%;
+			height: 100vh;
+			background: #2bbaff;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			overflow: hidden;
+		}
+		.bg h2{
+			position: relative;
+			color: #fff;
+			font-size: 5em;
+		}
+		.skewedOne{
+			position: absolute;
+			bottom: -100%;
+			left: 50%;
+			width: 100%;
+			height: 100%;
+			background: #323232;
+			transform: skewY(-15deg);
+			transform-origin: top left;
+		}
+		.skewedTwo{
+			position: absolute;
+			bottom: -100%;
+			right: 50%;
+			width: 100%;
+			height: 100%;
+			background: #323232;
+			transform: skewY(15deg);
+			transform-origin: top right;
+		}
+		section{
+			padding: 100px;
+		}
+		section h2{
+			color: #fff;
+			font-size: 2em;
+			margin-bottom: 10px;
+		}
+		section p{
+			color: #fff;
+			font-size: 1.2em;
+		}
+	</style>
+</head>
+<body>
+	<section class="bg">
+		<h2>Scroll To See Magic
+			</h2>
+		<span class="skewedOne"></span>
+		<span class="skewedTwo"></span>
+	</section>
+	<section>
+		<h2>bla bla bla bla bla bla bla bla bla</h2>
+		<p> bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
+		 bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
+		  bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla 
+		bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
+		bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
+		<br><br>
+		 bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
+		  bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
+		bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
+		bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
+		<br><br>
+		 bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
+		  bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
+		bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
+		bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
+		<br><br>
+		 bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
+		  bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
+		bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
+		bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla<br><br>
+		 bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
+		  bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
+		bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
+		bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
+		<br><br>
+		 bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
+		  bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
+		bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
+		bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
+			</p>
+	</section>
+	<script>
+		const SkewedOne = document.querySelector('.skewedOne');
+		const SkewedTwo = document.querySelector('.skewedTwo');
+		window.addEventListener('scroll',function(){
+			const value1 = -15 + window.scrollY/45;
+			const value2 = 15 + window.scrollY/-45;/**/
+			SkewedOne.style.transform = "skewY(" + value1 + "deg)";
+			SkewedTwo.style.transform = "skewY(" + value2 + "deg)";
+		});
+	</script>
+</body>
+</html>

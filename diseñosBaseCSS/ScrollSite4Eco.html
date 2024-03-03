@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8"/> 
+	<meta http-equiv="content-security-policy|Content-Type|default-style|refresh" content="text/html;width=device-width;charset=utf-8;" initial-scale="1.0"/>
+		<title>Tocha | BioEco</title>
+	<meta name="keywords" content="fertilizantes,huertos"/>
+	<meta name="description" content="venta de fertilizantes liquidos y por costal, para huertos urbanos cultura ambiental"/>
+	<link rel="shortcut icon|apple-touch-icon|apple-touch-icon-precomposed" href="favicon.ico" sizes="HeightxWidth|any" type="image/x-icon"/>
+	<style>
+		@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+		@import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
+		*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+		body{overflow-x:hidden;background:#fff;min-height:100vh;}
+		#headerEco{position:absolute;top:0;left:0;width:100%;padding:30px 100px;display:flex;justify-content:space-between;align-items:center;z-index:1000;}
+		#headerEco .logoEco{color:#040105;font-weight:700;font-size:2em;text-decoration:none;}
+		#headerEco ul{display:flex;justify-content:center;align-items:center;}
+		#headerEco ul li{list-style:none;margin-left:20px;}
+		#headerEco ul li a{text-decoration:none;padding:6px 15px;color:#415;border-radius:20px;}
+		#headerEco ul li a:hover,
+		#headerEco ul li a.active{background:#094b65;color:#fff;}
+		section{position:relative;width:100%;height:100vh;/*min-height:100vh;*/display:flex;justify-content:center;align-items:center;}
+		section::before{/*content:'';*/position:absolute;bottom:0;left:0;width:100%;height:100px;background:linear-gradient(to top,#f00,transparent);z-index:10;}
+		section img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;pointer-events:none;}
+		#water{margin:50vh 0;max-height:50vh;}
+		section #textEco{position:absolute;color:#094b65;font-size:10vw;text-align:center;line-height:0.55em;font-family:'Rancho',cursive;transform:translateY(-50%);}
+		section #textEco span{font-size:0.20em;letter-spacing:2px;font-weight:400;font-family:'Poppins',sans-serif;}
+		#btnEco{text-decoration:none;display:inline-block;padding:8px 30px;background:#fff;color:#094b65;font-size:1.2em;font-weight:500;letter-spacing:2px;border-radius:40px;transform:translateY(100px);}
+		.contEco{position:relative;padding:100px;background:#094b65;}
+		.contEco h2{font-size:3.5em;color:#fff;margin-bottom:10px;}
+		.contEco p{font-size:1em;color:#fff;}
+	</style>
+</head>
+<body>
+	<header id="headerEco">
+		<a href="#" class="logoEco">Tocha BioEco</a>
+		<ul>
+			<li><a href="#" class="active">Home</a></li>
+			<li><a href="#">About</a></li>
+			<li><a href="#">Destination</a></li>
+			<li><a href="#">Contact</a></li>
+		</ul>
+	</header>
+	<section>
+		<h2 id="textEco"><span>Its a Time for a New</span><br>Adventure</h2>
+		<img src="png1.png" id="bird1"/>
+		<img src="png2.png" id="bird2"/>
+		<img src="rocks.png" id="forest"/>
+		<a href="#" id="btnEco">Explore</a>
+		<img src="forest.png" id="rocks"/>	
+		<img src="water.png" id="water"/>	
+	</section>
+	<div class="contEco">
+		<h2>Paralax Scroling</h2>
+		<p>Lorem ipsum dolor bla  bla bla  blabla  bla bla  bla bla  bla bla  blabla  bla bla  bla bla  bla bla  blabla  bla bla  bla bla  bla bla  blabla  bla bla  bla
+			</p>
+	</div>
+	<script>
+		let text=document.getElementById('textEco');let bird1=document.getElementById('bird1');let bird2=document.getElementById('bird2');let btn=document.getElementById('btnEco');let rocks=document.getElementById('rocks');let forest=document.getElementById('forest');let water=document.getElementById('water');let header=document.getElementById('headerEco');
+		window.addEventListener('scroll',function(){
+			let value=window.scrollY;text.style.top=50+value*-0.5+'%';bird1.style.top=value*-1.5+'px';bird1.style.left=value*2+'px';bird2.style.top=value*-1.5+'px';bird2.style.top=value*-5+'px';btn.style.top=value*1.5+'px';rocks.style.top=value*-0.12+'px';forest.style.top=value*0.25+'px';header.style.top=value*0.5+'px';
+		});
+	</script>
+</body>
+</html>

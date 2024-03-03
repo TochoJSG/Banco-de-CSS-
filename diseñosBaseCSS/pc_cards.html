@@ -1,0 +1,202 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Presentation Cards</title>
+<!--<link rel="stylesheet" type="text/css" href="estilo_PreCards.css"/>-->
+<style>
+	@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=sw	ap');
+	*{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		font-family: 'Poppins',sans-serif;
+	}
+	body{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background: #222;
+		min-height: 100vh;
+	}
+	.container_pc{
+		position: relative;
+		width: 1000px;
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		margin: 20px 0;
+	}
+	.container_pc .pc_card{
+		position: relative;
+		height: 250px;
+		background: #fff;
+		display: flex;
+		width: 45%;
+		margin: 30px 0;
+	}
+	.container_pc .pc_card .PcImgBx{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: #333;
+		z-index: 1;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		overflow: hidden;
+		transition: 0.5s ease-in-out;
+	}
+	.container_pc .pc_card:hover .PcImgBx{
+		width: 150px;
+		height: 150px;
+		left: -75px;
+		top: clac(50% - 75px);
+		transition: 0.5s ease-in-out;
+		background: #ff0057;
+	}
+	.container_pc .pc_card:hover .PcImgBx:before{
+		content: attr(data-text);
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		text-align: center;
+		font-size: 6em;
+		color: rgba(255,255,255,.05);
+		font-weight: 700;
+	}
+	.container_pc .pc_card .PcImgBx img{
+		max-width: 100px;
+		transition: 0.5s ease-in-out;
+	}
+	.container_pc .pc_card:hover .PcImgBx img{
+		max-width: 75px;
+	}
+	.container_pc .pc_card .PcContent{
+		position: absolute;
+		right: 0;
+		width: calc(100% - 75px);
+		height: 100%;
+		padding: 20px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.container_pc .pc_card .PcContent h3{
+		margin-bottom: 5px;
+		font-size: 23px;
+	}
+	.container_pc .pc_card .PcContent a{
+		display: inline-block;
+		margin-top: 10px;
+		padding: 5px 10px;
+		background: #333;
+		text-decoration: none;
+		color: #fff;
+	}
+	@media (max-width:992px){
+		.container_pc{
+			width: 100%;
+			flex-direction: column;
+			align-items: center;
+		}
+		.container_pc .pc_card{
+			width: 400px;
+		}
+	}
+	@media (max-width: 768px){
+		.container_pc .pc_card{
+			max-width: 300px;
+			flex-direction: column;
+			height: auto;
+		}
+		.container_pc .pc_card .PcImgBx{
+			position: relative;
+		}
+		.container_pc .pc_card .PcImgBx,
+		.container_pc .pc_card:hover .PcImgBx{
+			width: 100%;
+			height: 200px;
+			left: 0;
+		}
+		.container_pc .pc_card .PcImgBx img,
+		.container_pc .pc_card:hover .PcImgBx img{
+			max-width: 100px;
+		}
+		.container_pc .pc_card .PcContent{
+			position: relative;
+			width: 100%;
+		}
+	}
+</style>
+</head>
+<body>
+<div class="container_pc">
+	
+	<div class="pc_card">
+		<div class="PcImgBx" data-text="code">
+			<img src="fb.jog"/>
+		</div>
+		<div class="PcContent">
+			<div>
+				<h3>Design</h3>
+				<p>bla bla bla bla bla bla bla bla bla bla bla
+				 bla bla bla bla bla bla bla bla bla bla bla bla
+				<a href="#">Read More</a>
+					</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="pc_card">
+		<div class="PcImgBx" data-text="code">
+			<img src="fb.jog"/>
+		</div>
+		<div class="PcContent">
+			<div>
+				<h3>Design</h3>
+				<p>bla bla bla bla bla bla bla bla bla bla bla
+				 bla bla bla bla bla bla bla bla bla bla bla bla
+				<a href="#">Read More</a>
+					</p>
+			</div>
+		</div>
+	</div>
+	
+	<div class="pc_card">
+		<div class="PcImgBx" data-text="code">
+			<img src="fb.jog"/>
+		</div>
+		<div class="PcContent">
+			<div>
+				<h3>Design</h3>
+				<p>bla bla bla bla bla bla bla bla bla bla bla
+				 bla bla bla bla bla bla bla bla bla bla bla bla
+				<a href="#">Read More</a>
+					</p>
+			</div>
+		</div>
+	</div>
+	
+	<div class="pc_card">
+		<div class="PcImgBx" data-text="code">
+			<img src="fb.jog"/>
+		</div>
+		<div class="PcContent">
+			<div>
+				<h3>Design</h3>
+				<p>bla bla bla bla bla bla bla bla bla bla bla
+				 bla bla bla bla bla bla bla bla bla bla bla bla
+				<a href="#">Read More</a>
+					</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
