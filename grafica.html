@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+		<title></title>
+	<style>
+		*{
+			user-select:none;
+		}
+		body{
+			margin:0;
+			padding:0;
+			font-family:sans-serif;
+		}
+		section{
+			width:100%;
+			height:100vh;
+			background:linear-gradient(0deg,#0039fe,#000105);
+		}
+		section .box{
+			position:absolute;
+			display:flex;
+			top:50%;
+			left:50%;
+			transform:translate(-50%,-50%);
+			width:550px;
+			height:300px;
+			background:transparent;
+			border-bottom:1px solid #000;
+			border-left:1px solid #000;
+		}
+		section .box .skill{
+			position:relative;
+			flex:1;
+			text-align:center;
+		}
+		section .box .skill .graph{
+			position:absolute;
+			width:40px;
+			background:rgba(0,0,0,0.1);
+			bottom:0;
+			left:50%;
+			transform:translateX(-50%);
+		}
+		section .box .skill .graph:before{
+			content:'';
+			position:absolute;
+			top:2px;
+			left:2px;
+			right:2px;
+			bottom:0;
+			background:linear-gradient(0deg, #003ba5, #009ffe);
+		}
+		section .box .skill .graph:after{
+			content:'';
+			position:absolute;
+			top:0;
+			left:0;
+			width:50%;
+			height:100%;
+			background:rgba(255,255,255,0.1);
+		}
+		section .box .skill .graph .percent{
+			position:absolute;
+			top:-20px;
+			left:50%;
+			transform:translateX(-50%);
+			color:#fff;
+			font-weight:bold;
+		}
+		section .box .skill .name{
+			position:absolute;
+			bottom:-30px;
+			left:50%;
+			transform:translateX(-50%);
+			text-align:center;
+			color:#fff;
+			background:#001e8a;
+			padding:2px 6px;
+			border-radius:4px;
+		}
+	</style>
+</head>
+<body>
+<section>
+	<div class="box">
+		<div class="skill">
+			<div class="graph" style="height:50%;">
+				<div class="percent">50%</div>
+			</div>
+			<div class="name">SQL</div>
+		</div>
+
+		<div class="skill">
+			<div class="graph" style="height:60%;">
+				<div class="percent">60%</div>
+			</div>
+			<div class="name">SQL</div>
+		</div>
+
+		<div class="skill">
+			<div class="graph" style="height:75%;">
+				<div class="percent">75%</div>
+			</div>
+			<div class="name">SQL</div>
+		</div>
+	
+		<div class="skill">
+			<div class="graph" style="height:35%;">
+				<div class="percent">35%</div>
+			</div>
+			<div class="name">SQL</div>
+		</div>
+</section>
+</body>
+</html>
+<!--
+import React from 'react';
+import './Skills.css'; // Mueve el CSS a un archivo separado para mayor claridad
+
+const Skill = ({ name, percentage }) => {
+  return (
+    <div className="skill">
+      <div className="graph" style={{ height: `${percentage}%` }}>
+        <div className="percent">{percentage}%</div>
+      </div>
+      <div className="name">{name}</div>
+    </div>
+  );
+};
+
+export default Skill;
+
+
+
+
+import React from 'react';
+import Skill from './Skill'; // Importa el componente Skill
+
+const SkillBox = ({ skills }) => {
+  return (
+    <section>
+      <div className="box">
+        {skills.map((skill, index) => (
+          <Skill key={index} name={skill.name} percentage={skill.percentage} />
+        ))}
+      </div>
+    </section>
+  );
+};
+
+export default SkillBox;
+
+
+
+* {
+  user-select: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+section {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(0deg, #0039fe, #000105);
+}
+
+section .box {
+  position: absolute;
+  display: flex;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 550px;
+  height: 300px;
+  background: transparent;
+  border-bottom: 1px solid #000;
+  border-left: 1px solid #000;
+}
+
+section .box .skill {
+  position: relative;
+  flex: 1;
+  text-align: center;
+}
+
+section .box .skill .graph {
+  position: absolute;
+  width: 40px;
+  background: rgba(0, 0, 0, 0.1);
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+section .box .skill .graph:before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 0;
+  background: linear-gradient(0deg, #003ba5, #009ffe);
+}
+
+section .box .skill .graph:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+section .box .skill .percent {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-weight: bold;
+}
+
+section .box .skill .name {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: #fff;
+  background: #001e8a;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+
+
+
+import React from 'react';
+import SkillBox from './SkillBox';
+
+const App = () => {
+  const skillsData = [
+    { name: 'SQL', percentage: 50 },
+    { name: 'JavaScript', percentage: 60 },
+    { name: 'CSS', percentage: 75 },
+    { name: 'React', percentage: 35 }
+  ];
+
+  return (
+    <div>
+      <SkillBox skills={skillsData} />
+    </div>
+  );
+};
+
+export default App;
+
+
+-->

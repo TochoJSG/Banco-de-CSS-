@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+	<meta charset="utf-8">
+		<title>LoginTrans</title>
+	<style>
+		*{
+			cursor:default;
+			user-select:none;
+		}
+		body{
+			margin:0;
+			padding:0;
+			font-family:sans-serif;
+			
+			background:url(fondo.png);
+			background-size:cover;	
+		}
+		nav{
+			width:100%;
+			background:#00316b;
+		}
+		nav ul{
+			width:80%;
+			margin:0 auto;
+			padding:0;
+		}
+		nav ul li{
+			list-style:none;
+			display:inline-block;
+			padding:19px;
+		}
+		nav ul li:hover{
+			background:#e91e63;
+		}
+		nav ul li a{
+			color:#fff;
+			text-decoration:none;
+		}
+		nav .toggle{
+			width:100%;
+			padding:10px 20px;
+			background:#001f44;
+			text-align:right;
+			box-sizing:border-box;
+			color:#fff;
+			font-size:33px;
+		}
+		nav .toggle img{
+			width:66px;
+		}
+		
+		@media(max-width:768px){
+			nav .toggle{display:block;}
+			nav ul{width:100%;display:none;}
+			nav ul li{display:block;text-align:center;}
+			.active{display:block;}
+		}
+	</style>
+	<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+</head>
+<body>
+	<nav>
+		<div class="toggle">
+			<img class="menu" src="user.jpg">
+		</div>
+		<ul>
+			<li><a href="#">Home</a></li>
+			<li><a href="#">About</a></li>
+			<li><a href="#">Services</a></li>
+			<li><a href="#">Portfolio</a></li>
+			<li><a href="#">contact</a></li>
+		</ul>
+	</nav>
+	
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.menu').click(function(){
+				$('ul').toggleClass('active');
+			})
+		})
+	</script>
+</body>
+</html>

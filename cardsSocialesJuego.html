@@ -1,0 +1,206 @@
+<!DOCTYPE html5>
+<html lang="es">
+		<head>
+			<meta http-equiv="content-security-policy|Content-Type|default-style|refresh" content="text/html; width=device-width; charset=utf-8;" initial-scale="1.0"/>
+				
+				<title>Cards Sociales</title>
+				
+			<link rel="shortcut icon|apple-touch-icon|apple-touch-icon-precomposed" href="favicon.ico" sizes="HeightxWidth|any" type="image/x-icon"/>
+			
+			<link rel="stylesheet" type="text/css" href="estilo_car_E-Commerce.css"/>
+			<link href="estilo_scroll.css" rel="stylesheet" type="text/css"/>
+			<!--<link href="estilo_forma.css" rel="stylesheet" type="text/css"/>-->
+			<link href="estilos_tocha.css" rel="stylesheet" type="text/css"/>
+			<link href="estilo_foo_anima_tocha.css" rel="stylesheet" type="text/css"/>
+		<!--<link href="dropdown.css" rel="stylesheet" type="text/css"/>-->
+			<link href="esilos_caja.css" rel="stylesheet" type="text/css"/>
+			<meta charset="UTF-8"> 
+			<meta name="description" content="Materias primas, iztapalapa venta desechables, bolsas biodegradables precios mayoreo en iztapalapa"/><!--Resumen preciso, para usuario. Descripcion de sitio  160 caracteres-->
+			<meta name="keywords" content="desechable, iztapalapa, biodegradable, bolsa, bolsas, materias primas"/>
+			<meta name="author" content="Jorge" />
+			<meta name="copyright" content="Propietario del copyright" />	
+<style>
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+* {
+    margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Ubuntu', sans-serif;
+}
+body{
+	display: flex;
+	justify-content: center;
+	align-items:center;
+	min-height:100vh;
+	background:#fff;
+}
+.cardISocial{
+	position:relative;
+	width:360px;
+	min-height:400px;
+	background:#fff;
+	box-shadow:15px 15px 60px rgba(0,0,0,0.15);
+	padding:20px;
+}
+.cardISocial .topCard{
+	display:flex;
+	justify-content: space-between;
+	align-items:center;
+}
+.cardISocial .topCard .userDetails{
+	display:flex;
+	align-items:center;
+}
+.cardISocial .topCard .userDetails .profileImg{
+	position:relative;
+	width:36px;
+	height:36px;
+	border-radius:50%;
+	overflow:hidden;
+	margin-right:8px;
+}
+.cardISocial .topCard .userDetails h3{
+	font-size:15px;
+	color:#4d4d4f;
+	font-weight:300;
+	line-height:1em;
+}
+.cardISocial .topCard .userDetails span{
+	font-size:0.75em;
+}
+.cover{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	object-fit:cover;
+}
+.dot{
+	transform:scale(0.6);
+	cursor:pointer;
+}
+.imgBx{
+	position:relative;
+	width:100%;
+	height:320px;
+	margin:9px 0 15px;
+}
+.actionBtns{
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+}
+.actionBtns img{
+	max-width:25px;
+	cursor:poniter;
+}
+.actionBtns .left img{
+	margin-right:9px;
+}
+.likes{
+	font-weight:500;
+	margin-top: 5px;
+	font-size: 15px;
+	color: #4d4d4df;
+}
+.message{
+	font-weight:300;
+	margin-top:5px;
+	color:#777;
+	font-size:16px;
+}
+.message b{
+	color:#262626;
+}
+.message span{
+	color: #1d92ff;
+	cursor:pointer;
+}
+.comments{
+	margin-top:10px;
+	font-weight:400;
+	color:#999;
+}
+.addComments{
+	display:flex;
+	align-items:center;
+	margin-top:9px;
+}
+.addComments .userImg{
+	position:relative;
+	min-width:30px;
+	height:30px;
+	border-radius:50%;
+	overflow:hidden;
+	margin-right:9px;
+}
+.text{
+	width:100%;
+	border:none;
+	outline:none;
+	font-weight:300;
+	font-size:15px;
+	color:#262626;
+}
+.text::placeholder{
+	color:#777;
+}
+.postTime{
+	margin-top:9px;
+	font-weight:500;
+	color:#777;
+}
+</style>
+</head>
+<body>
+	<div class="cardISocial">
+		<div class="topCard">
+			<div class="userDetails">
+				<div class="profileImg">
+				<img src="logo.jpg" class="cover"/>
+				</div>
+				<h3>Tocha<br><span>CDMX, Iztapalapa</span></h3>
+			</div>
+			<div>
+			<img src="dot.png" class="dot"/><!--3 puntitos-->
+			</div>
+		</div>
+		<div class="imgBx">
+			<img src="bg.jpg" class="cover"/>
+		</div>
+		<div class="actionBtns">
+			<div class="left">
+				<img src="heart.png" class="heart" onclick="likeButton()"/>
+				<img src="comment.png"/>
+				<img src="share.png"/>
+			</div>
+			<div class="right">
+				<img src="bookmark.png"/>
+			</div>
+		</div>
+		<h4 class="likes">3,684</h4>
+		<h4 class="messages"><b>Tocha</b>Gracias por dedicarnos tiempo<span>#cards</span><span>#html</span><span>#css</span>
+			</h4>
+		<h4 class="comments">View all 245 comments</h4>
+		<div class="addComments">
+			<div class="userImg">
+				<img src="user.jpg" class="cover"/>
+			</div>
+			<input type="text" class="text" placeholder="Agrega tu comentario por favor..."/>
+		</div>
+		<h5 class="postTime">4 hours ago</h5>
+	</div>
+	
+	<script>
+	function likeButton(){
+		let heart = document.querySelector('.heart');
+		let likes = document.querySelector('.likes');
+		if(heart.src.match('heart.png')){
+			heart.src = 'heart_red.png'; 
+			likes.innerHTML = '3,685';
+		}else{heart.src = 'heart.png'; likes.innerHTML = '3,684'; }
+	}
+	</script>
+</body>
+</html>

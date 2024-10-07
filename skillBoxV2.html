@@ -1,0 +1,153 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+		<title>Skills</title>
+	<style>
+		*{
+		
+		}
+		body{
+			margin:0;
+			padding:0;
+			font-family:sans-serif;
+			background:#02144;
+		}
+		.container{
+			width:500px;
+			position:absolute;
+			top:50%;
+			left:50%;
+			transform:translate(-50%,-50%);
+			padding:19px;
+			background:#072858;
+			box-sizing:border-box;
+			box-shadow:0 19px 50px rgba(0,0,0,.5);
+		}
+		.container h1{
+			margin:0;
+			padding:0;
+			text-transform:uppercase;
+			color:#fff;
+			letter-spacing:6px;
+		}
+		.container p{
+			color:#fff;
+		}
+		
+		.container .skill{
+			position:relative;
+			padding:15px 19px;
+			background:rgba(0,0,0,.1);
+			margin:10px 0;
+			border:1px solid rgba(255,255,255,0.1);
+			box-shadow:inset 0 0 25px rgba(0,0,0,.25);
+		}
+		.container .skill h3{
+			margin:0;
+			padding:0;
+			color:#fff;
+			float:left;
+		}
+		.container .skill .percent{
+			float:right;
+			color:#fff;
+		}
+		.container .skill .bar{
+			position:relative;
+			width:100%;
+			height:3px;
+			background:#041c40;
+			margin:15px 0 10px;
+		}
+		.container .skill .bar .progress{
+			position:absolute;
+			/*text-outline:0;*/
+			left:0;
+			top:0;
+			width:87%;
+			height:100%;
+			background:linear-gradient(to right, #0037,#2b80ff);
+		}
+		.container .skill .bar .progress:before{
+			content:'';
+			position:absolute;
+			top:-5px;
+			right:0;
+			width:12px;
+			height:12px;
+			border-radius:50%;
+			background:#fff;
+			box-shadow:0 0 25px rgba(41,123,247,1);
+		}
+	/*	.skill p{
+			color:#fff;
+			text-transform:uppercase;
+			margin:0 0 9px;
+			padding:0;
+			font-weight:bold;
+			letter-spacing:3px;
+		}
+		
+		.skills p:nth-child(2){
+			float:right;
+			position:relative;
+			top:-25px;
+		}
+		.skill{
+			background:#262626;
+			padding:4px;
+			box-sizing:border-box;
+			border:1px solid #0fffb7;
+			border-radius:3px;
+		}
+		.skill_level{
+			background:#0fffb7;
+			width:100%;
+			height:9px;
+		}*/
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Software Skills</h1>
+		<p>Holaaa💗próxima ingeniera química y bióloga, soy una pelirroja y romántica coqueta morrita que no me cierro a nada busco conocer gente de todo tipo, adoro los chicos detallistas, cabello largo y amorosos🫶🏻🫶🏻¿Alguien que me pueda pagar las uñas, ropita, maquillaje y cabello? Ya sabes esos gastos? Ocupo un proveedor ;(, No tengas miedo al hablarme puedo amarte mucho papi, con gusto puedes invitarme a salir, pero sorpréndeme con el plan🤍 si me gusta ten por hecho que me pondré muy linda
+			</p>
+		<div class="skill">
+			<div class="skill-label" style="width:90%;">
+				<h3>HTML</h3>
+				<span class="percent">87%</span>
+				<div style="clear:both"></div>
+				
+				<div class="bar">
+					<div class="progress" style="width:87%;"></div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="skill">
+			<div class="skill-label" style="width:90%;">
+				<h3>JAVA</h3>
+				<span class="percent">66%</span>
+				<div style="clear:both"></div>
+				
+				<div class="bar">
+					<div class="progress" style="width:66%;"></div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="skill">
+			<div class="skill-label" style="width:90%;">
+				<h3>PYTHON</h3>
+				<span class="percent">90%</span>
+				<div style="clear:both"></div>
+				
+				<div class="bar">
+					<div class="progress" style="width:90%;"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

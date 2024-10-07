@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+		<title></title>
+	<style>
+		*{
+			user-select:none;
+		}
+		body{
+			margin:0;
+			padding:0;
+			font-family:sans-serif;
+		}
+		section.sec1{
+			width:100%;
+			height:100vh;
+			box-sizing:border-box;
+			background:url(fondo.png);
+			background-size:cover;
+		}
+		section.sec2{
+			padding:100px;
+		}
+		nav{
+			position:fixed;
+			top:0;
+			left:0;
+			width:100%;
+			height:70px;
+			background:rgba(0,0,0,0.6);
+			padding:0 100px;
+			box-sizing:border-box;
+		}
+		nav .brand{
+			float:left;
+			height:100%;
+			line-height:70px;
+		}
+		nav .brand h2{
+			margin:0;
+			padding:0;
+			color:#fff;
+		}
+		nav ul{
+			float:right;
+			display:flex;
+			margin:0;
+			padding:0;
+		}
+		nav ul li{
+			list-style:none;
+		}
+		nav ul li a{
+			position:relative;
+			display:block;
+			height:70px;
+			line-height:70px;
+			padding:0 20px;
+			box-sizing:border-box;
+			color:#fff;
+			text-decoration:none;
+			text-transform:uppercase;
+			transition:0.6s;
+		}
+		nav ul li a:hover{
+			color:#262626;
+		}
+		nav ul li a:before{
+			content:'';
+			position:absolute;
+			top:0;
+			left:0;
+			width:100%;
+			height:100%;
+			background:#fff;
+			transform-origin:right;
+			z-index:-1;
+			transform:scaleX(0);
+			transition:transform .5s;
+		}
+		nav ul li a:hover:before{
+			transform-origin:left;
+			transform:scaleX(1);
+		}
+	</style>
+</head>
+<body>
+<nav>
+	<div class="brand">
+		<h2>Natalia</h2>
+	</div>
+	<ul>
+		<li><a href="#">Home</a></li>
+		<li><a href="#">About</a></li>
+		<li><a href="#">Services</a></li>
+		<li><a href="#">Portfolio</a></li>
+		<li><a href="#">Contact</a></li>
+	</ul>
+</nav>
+
+<section class="sec1">
+</section>
+
+<section class="sec2">
+	<h1>Lorem ipsum dolor sit amet</h1>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi pellentesque enim non lobortis consequat. Nullam tincidunt dapibus convallis. Phasellus vestibulum pulvinar ex, non tincidunt odio varius in. Pellentesque quis risus pellentesque, viverra risus vitae, mattis ipsum. Ut a risus a lectus elementum fermentum. Maecenas fringilla orci id dui facilisis cursus. Sed egestas quam nec arcu imperdiet, sed elementum ex laoreet.
+		</p>
+	<p>Nulla id dui eget mauris fermentum bibendum vitae a magna. Morbi tincidunt quis mauris at interdum. Vivamus aliquet purus quam, a elementum orci sodales quis. Ut nec placerat nisi. Ut lobortis lobortis faucibus. Praesent non semper nunc, ac iaculis ligula. Pellentesque volutpat ultricies risus pretium laoreet.
+		</p>
+	<p>Sed consequat felis id molestie vehicula. Etiam feugiat pulvinar turpis non suscipit. Donec fringilla lacus vitae dolor vehicula, vel varius nulla volutpat. Aenean ornare non nunc a fermentum. Aliquam varius ante sit amet diam porttitor mattis. Etiam elementum erat odio, ut pellentesque lectus vulputate ut. Aenean eu quam convallis, sagittis massa a, aliquam dolor. Curabitur mollis vestibulum magna, tempor pharetra mauris iaculis tristique. Suspendisse potenti. Sed tincidunt, diam interdum malesuada ornare, augue lectus imperdiet diam, a tincidunt velit mauris non lorem. Vestibulum varius sit amet leo ac vehicula. Duis pharetra ornare sapien, at pretium mauris dictum non. Nunc molestie vehicula urna, ut blandit sapien lobortis nec. Donec commodo consequat erat id laoreet. Aenean in massa at enim egestas sagittis nec a mi. Nam mattis volutpat convallis.
+		</p>
+
+</section>
+
+</body>
+</html>

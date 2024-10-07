@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+		<title>spatialMenuHover</title>
+	<style>
+		*{
+			user-select:none;
+		}
+		body{
+			margin:0;
+			padding:0;
+			font-family:sans-serif;
+			background:#ffff61;
+		}
+		ul{
+			position:absolute;
+			top:50%;
+			left:50%;
+			transform:translate(-50%,-50%);
+			margin:0;
+			padding:0;
+			display:flex;
+		}
+		ul li{
+			list-style:none;
+			position:relative;
+		}
+		ul li a{
+			position:relative;
+			width:100px;
+			height:40px;
+			display:block;
+			color:#262626;
+			line-height:40px;
+			text-align:center;
+			text-decoration:none;
+			transition:0.5s;
+			box-sizing:border-box;
+			/*border:1px solid #262626;
+			margin:0 10px;Quitar*/
+		}
+		ul li a span{
+			position:absolute;
+			width:25%;
+			height:100%;
+			background:#262626;
+			z-index:-1;
+			transform-origin:top;
+			transform:scaleY(0);
+			transition: transform 0.6s;
+		}
+		ul li a:hover{
+			transform-origin:bottom;/*comentar*/
+		
+			color:#fff;
+		}
+		ul li a:hover span{
+			transform-origin:bottom;
+			
+			transform:scaleY(1);
+		}
+		ul li a span:nth-child(1){
+			left:0;
+			
+			transition-delay:0s;
+		}
+		ul li a span:nth-child(2){
+			left:25%;
+			
+			transition-delay:0.15s;
+		}
+		ul li a span:nth-child(3){
+			left:50%;
+			
+			transition-delay:0.3s;
+		}
+		ul li a span:nth-child(4){
+			left:75%;
+			
+			transition-delay:0.45s;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>
+			<a href="#">Home
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span></a>
+		</li>
+		
+		<li>
+			<a href="#">About
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span></a>
+		</li>
+		
+		<li>
+			<a href="#">Services
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span></a>
+		</li>
+		
+		<li>
+			<a href="#">Team
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span></a>
+		</li>
+		
+		<li>
+			<a href="#">Portfolio
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span></a>
+		</li>
+	</ul>
+</body>
+</html>

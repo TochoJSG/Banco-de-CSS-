@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+		<title>Css CardHover</title>
+	<style>
+	*{
+		cursor:pointer;
+		user-select:none;
+	}
+	body{
+		margin:0;
+		padding:0;
+		font-family:sans-serif;
+	}
+	.cardSlide{
+		position:absolute;
+		overflow:hidden;
+		top:50%;
+		left:50%;
+		transform:translate(-50%,-50%);
+		width:300px;
+		height:400px;
+		background:#262626;
+	}
+	.cardSlide .imgBx,
+	.cardSlide .details{
+		position:absolute;
+		width:100%;
+		height:100%;
+		box-sizing:border-box;
+		transition:.6s;
+	}
+	.cardSlide .imgBx{
+		top:0;
+		left:0;
+	}
+	.cardSlide:hover .imgBx{
+		top:0;
+		left:-100%;
+	}
+	.cardSlide .imgBx img{
+		width:100%;
+		height:100%;
+	}
+	.cardSlide .details{
+		background:#262626;
+		top:0;
+		left:100%;
+		padding:60px 19px;
+	}
+	.cardSlide:hover .details{
+		top:0;
+		left:0;
+	}
+	.cardSlide .details h2{
+		color:#fff;
+		text-align:center;
+		margin:0;
+		padding:0 0 10px;
+		border-bottom:3px solid #fff;
+	}
+	.cardSlide .details p{
+		color:#fff;
+		margin:19px 0 0;
+		text-align:justify;
+	}
+	</style>
+</head>
+<body>
+	<div class="cardSlide">
+		<div class="imgBx">
+			<img src="user.jpg"/>
+		</div>
+		<div class="details">
+		<h2>Natalia</h2>
+		<p>Holaaa💗próxima ingeniera química y bióloga, soy una pelirroja y romántica coqueta morrita que no me cierro a nada busco conocer gente de todo tipo, adoro los chicos detallistas, cabello largo y amorosos🫶🏻🫶🏻¿Alguien que me pueda pagar las uñas, ropita, maquillaje y cabello? Ya sabes esos gastos? Ocupo un proveedor ;(, No tengas miedo al hablarme puedo amarte mucho papi, con gusto puedes invitarme a salir, pero sorpréndeme con el plan🤍 si me gusta ten por hecho que me pondré muy linda para ti
+				</p>
+		</div>
+	</div>
+</body>
+</html>

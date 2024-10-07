@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+		<title>Input 4 Search</title>
+	<style>
+		*{
+			user-select:none;
+			cursor:default;
+		}
+		body{
+			margin:0;
+			padding:0;
+			background:url(fondo.png);
+			background-size:cover;
+			font-family:sans-serif;
+		}
+		.inputBox{
+			cursor:pointer;
+			position:absolute;
+			width:600px;
+			top:50%;
+			left:50%;
+			transform:translate(-50%,-50%);
+		}
+		.inputBox h1{
+			margin:0 0 9px;
+			padding:0;
+			color:#000;
+			letter-spacing:6px;
+			font-size:1.9em;
+			font-weight:600;
+		}
+		.inputBox input{
+			position:relative;
+			display:inline-block;
+			font-size:19px;
+			box-sizing:border-box;
+			transition:.6s;
+		}
+		.inputBox input[type="text"]{
+			background:#fff;
+			width:350px;
+			height:50px;
+			border:none;
+			outline:none;
+			padding:0 25px;
+			border-radius:25px 0 0 25px;
+		}
+		.inputBox input[type="submit"]{
+			position:relative;
+			left:-5px;
+			border-radius:0 25px 25px 0;
+			width:150px;
+			height:50px;
+			border:none;
+			outline:none;
+			cursor:pointer;
+			background:#ffc107;
+			color:#fff;
+		}
+		.inputBox input[type="submit"]:hover{
+			background:#ff5722;
+		}
+		::placeholder{
+			font-size:19px;
+			letter-spacing:3px;
+			font-weight:300;
+		}
+	</style>
+</head>
+<body>
+	<div class="inputBox">
+		<h1>search</h1>
+		<form>
+			<input type="text" name="" placeholder="type . . ."/>
+			<input type="submit" name="" value="search"/>
+		</form>
+	</div>
+</body>
+</html>

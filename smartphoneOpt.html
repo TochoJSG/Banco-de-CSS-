@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+		<title>Smartphone 2</title>
+	<style>
+		*{
+			user-select:none;
+		}
+		body{
+			margin:0;
+			padding:0;
+			display:flex;
+			justify-content:center;
+			align-items:center;
+			min-height:100vh;
+		}
+		.sp{
+			position:relative;
+			width:245px;/*295px*/
+			height:550px;/*650px*/
+			background:#121212;
+			border-radius:40px;
+			transform: rotate(-17deg);
+			transition:.6s;
+			box-shadow:inset 0 0 15px rgba(0,0,0,.2), 0 40px 99px rgba(0,0,0,.4);
+		}
+		.sp .screen{
+			position:absolute;
+			top:20px;
+			bottom:20px;
+			right:6px;
+			left:6px;
+			background:#000;
+			border-radius:20px;
+			overflow:hidden;
+		}
+		.sp .screen:before{
+			content:'';
+			position:absolute;
+			top:0;
+			left:-50%;
+			width:100%;
+			height:100%;
+			background:rgba(255,255,255,.1);
+			transform:skewX(-15deg);/**/
+			z-index:1;
+			box-shadow:inset 0 0 19px rgba(0,0,0,.3);
+		}
+		
+		
+		
+		.sp:hover .screen:before{
+			content:'';
+			position:absolute;
+			top:0;
+			left:-50%;
+			width:100%;
+			height:100%;
+			background:rgba(255,255,255,0.01);
+			transform:skewX(0deg);/**/
+			z-index:1;
+			transition:.6s;
+			box-shadow:inset 0 0 19px rgba(0,0,0,.3);
+		}
+		
+		
+		
+		.sp .screen img{
+			position:absolute;
+			top:0;
+			left:0;
+			width:100%;
+			height:100%;
+			object-fit:cover;
+			opacity:0;
+			transition:1s;
+		}
+		.sp .screen:hover img{
+			opacity:1;
+		}
+		.sp:after{
+			content:'';
+			position:absolute;
+			transform:translateX(-50%);
+			top:19px;
+			left:50%;
+			width:99px;/*minimizar? o agrandar a 145px?*/
+			height:17px;
+			background: #121212;
+			opacity:1;
+			z-index:1;
+			border-bottom-left-radius:10px;
+			border-bottom-right-radius:10px;
+	}
+	.sp:hover{
+		transform: rotate(0deg);
+	}
+	</style>
+</head>
+<body>
+	<div class="sp">
+		<div class="screen">
+			<img src="ui.png"/>
+		</div>
+	</div>
+</body>
+</html>

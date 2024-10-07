@@ -1,0 +1,462 @@
+<!doctype html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<meta charset="UTF-8"> 
+	<title>Forma de Logeo</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="estilo_forma.css"/>
+	<style>
+	@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+	*{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		font-family: 'Poppins',sans-serif;
+	}
+	.navigation{
+		position: fixed;
+		
+		top: 50px;
+		right: 50px;
+		
+		height: 50px;
+		width: 250px;
+		background: #2196f3;
+		transition: 0.5s;
+		z-index: 100000;
+		overflow: hidden;
+	}
+	.navigation.active{
+		height: auto;
+	}
+	.navigation .toggle{
+		position: relative;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 50px;
+		background: #2196f3;
+		color: aqua;
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		padding: 0 20px;
+		font-size: 19px;
+		cursor: pointer;
+	}
+	.navigation .toggle:before{
+		content: 'Menu';
+		margin-right: 10px;
+	}
+	.navigation .toggle.active:before{
+		content: 'Close';
+		margin-right: 10px;
+	}
+	.navigation .toggle span{
+		position: relative;
+		width: 20px;
+		height: 50px;
+	}
+	.navigation .toggle span:before{
+		content: '';
+		position: absolute;
+		top: 20px;
+		left: 0;
+		width: 100%;
+		height: 2px;
+		background: #fff;
+		transition: 0.5s;
+	}
+	.navigation .toggle span::after{
+		content: '';
+		position: absolute;
+		bottom: 20px;
+		left: 0;
+		width: 100%;
+		height: 2px;
+		background: #fff;
+		transition: 0.5s;
+	}
+	.navigation .toggle.active span::before{
+		transform: rotate(225deg);
+		top: 24px;
+	}
+	.navigation .toggle.active span::after{
+		transform: rotate(135deg);
+		bottom: 24px;
+	}
+	.navigation ul{
+		position: relative;
+		background: #111;
+		height: auto;
+		width: 250px;
+	}
+	.navigation ul li{
+		list-style: none;
+	}
+	.navigation ul li a{
+		position: relative;
+		text-decoration: none;
+		display: block;
+		padding: 10px 20px;
+		height: 50px;
+		color: #fff;
+		font-size: 17px;
+		transition: 1s;
+	}
+	.navigation ul li a:hover{
+		left: 0;
+		transition: 0s;
+		background: #2196f3;
+	}
+	</style>
+</head>
+<body>
+	<div class="navigation">
+		<div class="toggle">
+			<span></span></div>
+		<ul>
+			<li><a href="#">Productos</a></li>
+			<li><a href="#">Materias Primas</a></li>
+			<li><a href="#">FaceBook</a></li>
+			<li><a href="#">Donde estamos</a></li>
+		</ul>
+	</div>
+	<script>
+		const navigation = document.querySelector('.navigation');
+		document.querySelector('.toggle').onclick = function(){
+			this.classList.toggle('active');
+			navigation.classList.toggle('active');
+		}
+	</script>
+</body>
+</html>
+<!--
+hooks como useState para manejar el estado del menú. Además, el menú se cargará dinámicamente utilizando un array de elementos de la lista.
+
+import React, { useState } from 'react';
+import './Menu.css'; // Puedes mover los estilos aquí si lo deseas
+
+const Menu = () => {
+  // Estado para manejar el menú activo
+  const [isActive, setIsActive] = useState(false);
+
+  // Lista dinámica de enlaces del menú
+  const menuItems = [
+    { name: 'Productos', link: '#' },
+    { name: 'Materias Primas', link: '#' },
+    { name: 'FaceBook', link: '#' },
+    { name: 'Donde estamos', link: '#' },
+  ];
+
+  // Función para alternar la clase de menú activo
+  const toggleMenu = () => {
+    setIsActive(!isActive);
+  };
+
+  return (
+    <div className={`navigation ${isActive ? 'active' : ''}`}>
+      <div className={`toggle ${isActive ? 'active' : ''}`} onClick={toggleMenu}>
+        <span></span>
+      </div>
+      <ul>
+        {menuItems.map((item, index) => (
+          <li key={index}>
+            <a href={item.link}>{item.name}</a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export default Menu;
+
+
+
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.navigation {
+  position: fixed;
+  top: 50px;
+  right: 50px;
+  height: 50px;
+  width: 250px;
+  background: #2196f3;
+  transition: 0.5s;
+  z-index: 100000;
+  overflow: hidden;
+}
+
+.navigation.active {
+  height: auto;
+}
+
+.navigation .toggle {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: #2196f3;
+  color: aqua;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 20px;
+  font-size: 19px;
+  cursor: pointer;
+}
+
+.navigation .toggle:before {
+  content: 'Menu';
+  margin-right: 10px;
+}
+
+.navigation .toggle.active:before {
+  content: 'Close';
+  margin-right: 10px;
+}
+
+.navigation .toggle span {
+  position: relative;
+  width: 20px;
+  height: 50px;
+}
+
+.navigation .toggle span:before,
+.navigation .toggle span:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  transition: 0.5s;
+}
+
+.navigation .toggle span:before {
+  top: 20px;
+}
+
+.navigation .toggle span:after {
+  bottom: 20px;
+}
+
+.navigation .toggle.active span:before {
+  transform: rotate(225deg);
+  top: 24px;
+}
+
+.navigation .toggle.active span:after {
+  transform: rotate(135deg);
+  bottom: 24px;
+}
+
+.navigation ul {
+  position: relative;
+  background: #111;
+  height: auto;
+  width: 250px;
+}
+
+.navigation ul li {
+  list-style: none;
+}
+
+.navigation ul li a {
+  position: relative;
+  text-decoration: none;
+  display: block;
+  padding: 10px 20px;
+  height: 50px;
+  color: #fff;
+  font-size: 17px;
+  transition: 1s;
+}
+
+.navigation ul li a:hover {
+  background: #2196f3;
+}
+
+-->
+
+
+<!--
+omponente React funcional, que incluye la capacidad de cargar dinámicamente una lista de elementos a través de props
+import React, { useState } from 'react';
+import './Navigation.css'; // El CSS lo moveremos a un archivo separado
+
+const Navigation = ({ items }) => {
+  const [menuActive, setMenuActive] = useState(false);
+
+  const handleToggle = () => {
+    setMenuActive(!menuActive);
+  };
+
+  return (
+    <div className={`navigation ${menuActive ? 'active' : ''}`}>
+      <div className={`toggle ${menuActive ? 'active' : ''}`} onClick={handleToggle}>
+        <span></span>
+      </div>
+      <ul>
+        {items.map((item, index) => (
+          <li key={index}>
+            <a href="#">{item}</a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export default Navigation;
+
+
+
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.navigation {
+  position: fixed;
+  top: 50px;
+  right: 50px;
+  height: 50px;
+  width: 250px;
+  background: #2196f3;
+  transition: 0.5s;
+  z-index: 100000;
+  overflow: hidden;
+}
+
+.navigation.active {
+  height: auto;
+}
+
+.navigation .toggle {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: #2196f3;
+  color: aqua;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 20px;
+  font-size: 19px;
+  cursor: pointer;
+}
+
+.navigation .toggle:before {
+  content: 'Menu';
+  margin-right: 10px;
+}
+
+.navigation .toggle.active:before {
+  content: 'Close';
+  margin-right: 10px;
+}
+
+.navigation .toggle span {
+  position: relative;
+  width: 20px;
+  height: 50px;
+}
+
+.navigation .toggle span:before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  transition: 0.5s;
+}
+
+.navigation .toggle span::after {
+  content: '';
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  transition: 0.5s;
+}
+
+.navigation .toggle.active span::before {
+  transform: rotate(225deg);
+  top: 24px;
+}
+
+.navigation .toggle.active span::after {
+  transform: rotate(135deg);
+  bottom: 24px;
+}
+
+.navigation ul {
+  position: relative;
+  background: #111;
+  height: auto;
+  width: 250px;
+}
+
+.navigation ul li {
+  list-style: none;
+}
+
+.navigation ul li a {
+  position: relative;
+  text-decoration: none;
+  display: block;
+  padding: 10px 20px;
+  height: 50px;
+  color: #fff;
+  font-size: 17px;
+  transition: 1s;
+}
+
+.navigation ul li a:hover {
+  left: 0;
+  transition: 0s;
+  background: #2196f3;
+}
+
+
+
+
+aplicacion
+import React from 'react';
+import Navigation from './Navigation';
+
+const App = () => {
+  const menuItems = ["Productos", "Materias Primas", "FaceBook", "Donde estamos"];
+
+  return (
+    <div>
+      <Navigation items={menuItems} />
+    </div>
+  );
+};
+
+export default App;
+
+-->

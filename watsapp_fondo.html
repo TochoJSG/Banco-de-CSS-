@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Prueba WhatsApp</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+		.whatsapp {
+  position:fixed;
+  width:60px;
+  height:60px;
+  bottom:40px;
+  right:40px;
+  background-color:#25d366;
+  color:#FFF;
+  border-radius:50px;
+  text-align:center;
+  font-size:30px;
+  z-index:100;
+}
+
+.whatsapp-icon {
+  margin-top:13px;
+}
+	</style>
+	
+	    <!--<script>
+        window.onload = function () {
+            // Variables
+			const IMAGENES = ["1.jpg","3.jpg","div.jpg"];//Estas cadenas constantes son los nombres de las imagenes a mostrar
+            const TIEMPO_INTERVALO_MILESIMAS_SEG = 1000;
+            let posicionActual = 0;
+            let $botonRetroceder = document.querySelector('#retroceder');
+            let $botonAvanzar = document.querySelector('#avanzar');
+            let $imagen = document.querySelector('#imagen');
+            let $botonPlay = document.querySelector('#play');
+            let $botonStop = document.querySelector('#stop');
+            let intervalo;
+            // Funciones
+            function pasarFoto(){//Funcion que cambia la foto en la siguiente posicion
+                if(posicionActual >= IMAGENES.length - 1){//Si el valor de Indice es mayor a numero de imagenes se recorrio todo 
+                    posicionActual = 0;//Si se recorrio todo Indice reinicia, vuelve a posicion inicial 0
+					}else{
+						posicionActual++;//Si aun no se recorre todo indice aumenta una posicion
+						}
+                renderizarImagen();
+            }
+            function retrocederFoto(){//Funcion que cambia la foto en la anterior posicion
+                if(posicionActual <= 0){ 
+                    posicionActual = IMAGENES.length - 1;
+					}else{
+						posicionActual--;
+						}
+                renderizarImagen();
+            }
+            function renderizarImagen(){//Funcion que muestra la imagen dependiendo de posicionActual
+                $imagen.style.backgroundImage = `url(${IMAGENES[posicionActual]})`;//Recorre las imagenes definidas y las recorre con el Item
+            }
+            function playIntervalo(){//Activa autoplay de la imagen
+                intervalo = setInterval(pasarFoto, TIEMPO_INTERVALO_MILESIMAS_SEG);
+                // Desactivamos los botones de control
+                $botonAvanzar.setAttribute('disabled', true);
+                $botonRetroceder.setAttribute('disabled', true);
+                $botonPlay.setAttribute('disabled', true);
+                $botonStop.removeAttribute('disabled');
+            }
+            function stopIntervalo(){//Detine autoplay de la imagen
+                clearInterval(intervalo);
+                // Activamos los botones de control
+                $botonAvanzar.removeAttribute('disabled');
+                $botonRetroceder.removeAttribute('disabled');
+                $botonPlay.removeAttribute('disabled');
+                $botonStop.setAttribute('disabled', true);
+            }
+            // Eventos
+            $botonAvanzar.addEventListener('click', pasarFoto);
+            $botonRetroceder.addEventListener('click', retrocederFoto);
+            $botonPlay.addEventListener('click', playIntervalo);
+            $botonStop.addEventListener('click', stopIntervalo);
+            // Iniciar
+            renderizarImagen();
+        } 
+    </script>-->
+</head>
+<body>
+	<a href="https://wa.me/5211234567890?text=Me%20gustaría%20saber%20el%20precio%20del%20coche" class="whatsapp" target="_blank"> <i class="fa fa-whatsapp whatsapp-icon"></i></a>
+	
+</body>
+</html>
+
+<!--
+<!DOCTYPE html>
+<html>
+<head>
+<title>Facebook Login JavaScript Example</title>
+<meta charset="UTF-8">
+</head>
+<body>
+<script>
+
+  function statusChangeCallback(response) {  // Called with the results from FB.getLoginStatus().
+    console.log('statusChangeCallback');
+    console.log(response);                   // The current login status of the person.
+    if (response.status === 'connected') {   // Logged into your webpage and Facebook.
+      testAPI();  
+    } else {                                 // Not logged into your webpage or we are unable to tell.
+      document.getElementById('status').innerHTML = 'Please log ' +
+        'into this webpage.';
+    }
+  }
+
+
+  function checkLoginState() {               // Called when a person is finished with the Login Button.
+    FB.getLoginStatus(function(response) {   // See the onlogin handler
+      statusChangeCallback(response);
+    });
+  }
+
+
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '{app-id}',
+      cookie     : true,                     // Enable cookies to allow the server to access the session.
+      xfbml      : true,                     // Parse social plugins on this webpage.
+      version    : '{api-version}'           // Use this Graph API version for this call.
+    });
+
+
+    FB.getLoginStatus(function(response) {   // Called after the JS SDK has been initialized.
+      statusChangeCallback(response);        // Returns the login status.
+    });
+  };
+ 
+  function testAPI() {                      // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
+    console.log('Welcome!  Fetching your information.... ');
+    FB.api('/me', function(response) {
+      console.log('Successful login for: ' + response.name);
+      document.getElementById('status').innerHTML =
+        'Thanks for logging in, ' + response.name + '!';
+    });
+  }
+
+</script>
+
+
+<!-- The JS SDK Login Button -->
+
+<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+</fb:login-button>
+
+<div id="status">
+</div>
+
+<!-- Load the JS SDK asynchronously -->
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+</body>
+</html>-->

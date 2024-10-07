@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>valida mail</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+			font-family:'Poppins',sans-serif;
+		}
+		body{
+			display:flex;
+			justify-content:center;
+			align-items:center;
+			min-height:100vh;
+			background:#373737;
+		}
+		h3{
+			position:relative;
+			font-size:19px;
+			color:#f9f9f9;
+			letter-spacing:3px;
+			font-weight:600;
+			margin-bottom:6px;
+		}
+		#form{
+			position:relative;
+		}
+		#form #email{
+			width:333px;
+			background:#292929;
+			outline:none;
+			border:none;
+			padding:9px;
+			border-radius:6px;
+			color:#fff;
+			font-style:bold;
+			font-size:19px;
+		}
+		#form .inputBox{
+			position:relative;
+		}
+		#form #text{
+			display:block;
+			color:#000;
+			font-weight:300;
+			font-style:italic;
+			padding:6px;
+		}
+		#form .invalid .inputBox:before,
+		#form .valid .inputBox:before{
+			content:''; 
+			position:absolute;
+			right:12px;
+			top:9px;
+			width:25px;
+			height:25px;
+			background:url(user.jpg); 
+			background-size:cover;
+			z-index:1000;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<h3>Email Validador</h3>
+		<form id="form" action="#">
+			<div class="inputBox">
+				<input id="email" type="text" name="" placeholder="Enter Email Address" onkeydown="validation()">
+				<span id="text"></span>
+			</div>
+		</form>
+	</div>
+	<script type="text/javascript">
+		const validation=()=>{
+			///^[^ ]+@[^ ]+\.[a-zA-Z]{2,}$/;
+			const form = document.getElementById("form");
+			let mail = document.getElementById("email").value;
+			const text = document.getElementById("text");
+			const pattern = /^[^ ]+@[^ ]+\.[a-zA-Z]{2,}$/;
+			if(mail.match(pattern)){
+				form.classList.add("valid");
+				form.classList.remove("invalid");
+				text.innerHTML = 'Your email is valid';
+				text.style.color = "#00ff00";
+			}else{
+				form.classList.remove("valid");
+				form.classList.add("invalid");
+				text.innerHTML = "Enter valid email";
+				text.style.color = "#ff0000";
+			}
+			if(mail === ""){
+				form.classList.remove("valid");
+				form.classList.remove("invalid");
+				text.innerHTML = "";
+				text.style.color = '#00ff00';
+			}
+		};
+	</script>
+</body>
+</html>
